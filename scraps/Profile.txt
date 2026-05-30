@@ -1,0 +1,178 @@
+Contact
+johnongeriouma@gmail.com
+www.linkedin.com/in/john-ongeri-
+b01759226 (LinkedIn)
+Top Skills
+JavaScript
+Flutter
+Mobile Application Development
+Certifications
+University Financial Treasurer
+John Ongeri
+Software Engineer | Ex-Google Extern (ALU Industry Partnership)
+| UN IOM Climate Tech | ML & Backend Systems | Mastercard
+Foundation Scholar @ ALU | Python • Mobile Application
+Development • AWS • Distributed Systems
+Nairobi, Nairobi County, Kenya
+Summary
+I solve problems institutions pay millions to solve.By 23, I've
+engineered inside Google's ecosystem through ALU's most
+competitive industry partnership, built technical tooling for the
+United Nations' global climate mandate at IOM-UN in Nairobi,
+and architected data infrastructure tracking impact across 500+
+beneficiaries for Menya Accelerator in partnership with African
+Leadership Academy, all while completing a Software Engineering
+degree on a full Mastercard Foundation Scholarship at one of
+Africa's most selective universities.What I've actually shipped:→
+Google (ALU Industry Partnership): Built a production data-
+processing module handling 5,600+ structured records with 18
+automated test cases. Code-reviewed 3 engineers and intercepted
+11 critical logic errors before deployment.→ UN IOM (Climate
+Action): Engineered data workflows and technical reporting tools
+supporting the UN's global climate displacement mandate.→ Equity
+Bank: Processed transactions for 100+ customers daily on East
+Africa's largest fintech core banking system zero reconciliation
+errors.Background that built me: First-generation university
+student. Wings to Fly Scholar. Equity Leaders Program Scholar.
+Mastercard Foundation Scholar. Every credential earned, none
+inherited.johnongeriouma@gmail.comhttps://github.com/JohnOngeri
+Experience
+IOM - UN Migration
+Intern
+April 2026 - Present (2 months)
+Nairobi County, Kenya
+Built Python and SQL automation workflows processing 12,000+ climate
+mobility and displacement records across regional reporting programmes.
+Page 1 of 5
+
+-- 1 of 5 --
+
+Reduced manual reporting time from 6 hours to under 2 hours by developing
+automated data cleaning and reporting scripts for field operations teams.
+Maintained data pipelines and dashboards tracking 20+ climate action
+indicators used in programme monitoring and donor reporting.
+Collaborated with 8+ programme and research staff to improve data accuracy,
+reporting consistency, and operational workflow efficiency across climate
+action initiatives.
+Asakheni SA
+Founder’s Associate | Research Operations & AI Systems
+January 2026 - Present (5 months)
+South Africa
+Built and maintained 12+ AI-powered operational workflows using Python,
+Claude, Zapier, and Make.com, automating internal processes across
+reporting, document generation, stakeholder communication, and data
+capture.
+Reduced manual administrative workload by approximately 25 hours per
+month by developing automated reporting pipelines and internal operational
+systems for programme and business management.
+Managed and maintained 8+ operational trackers and dashboards covering
+partnership pipelines, programme KPIs, funding opportunities, meeting action
+logs, and monitoring & evaluation reporting.
+Supported the preparation of 20+ strategic documents including funding
+proposals, concept notes, research briefs, investor materials, and external
+stakeholder communications for social-impact and commercialisation
+initiatives.
+Conducted research and market analysis across 15+ potential funders,
+ecosystem partners, and EdTech opportunities, contributing to partnership
+development and strategic growth planning.
+Coordinated cross-functional operations across 5+ concurrent projects,
+ensuring timely execution of programme deliverables, partner follow-ups,
+reporting cycles, and founder priorities.
+Page 2 of 5
+
+-- 2 of 5 --
+
+Designed and documented internal systems and workflows for onboarding,
+project management, reporting, and operational coordination, improving
+execution consistency within a fast-moving startup environment.
+Served as the technical and operational bridge between business strategy,
+research operations, and AI automation initiatives, contributing to the scaling of
+internal infrastructure and process efficiency.
+Google
+Software Engineering Extern
+September 2025 - December 2025 (4 months)
+Nairobi County, Kenya
+Engineered a production data-processing module ingesting 5,600+ structured
+records, hardened with 18 automated test cases, zero post-deployment
+defects across the cohort review.
+Code-reviewed 3 engineers' pull requests, intercepting 11 critical logic errors
+before deployment, set the QA bar within the cohort.
+Built modular Python pipelines to Google engineering standards: clean
+separation of concerns, defensive error handling, full test coverage.
+Selected into one of ALU's most competitive industry placements, operated
+inside Google's mentorship framework alongside FAANG engineers.
+African Leadership Academy
+ALforEducation Apprentice
+May 2025 - August 2025 (4 months)
+South Africa
+Architected a 5-part Monitoring & Evaluation framework tracking impact across
+500+ beneficiaries in Opportunities and Entrepreneurship programs adopted
+organization-wide.
+Engineered 10+ reusable reporting templates and structured data-collection
+systems, accelerating monthly and quarterly assessment cycles for 3
+distributed field teams.
+Defined and validated 15 key program indicators (cohort completion rates, jobs
+created) converted leadership instinct into measurable, scalable signal.
+Page 3 of 5
+
+-- 3 of 5 --
+
+Compressed feedback loops by 20% via structured stakeholder reporting
+directly seeded the strategic concept that became Menya Academy.
+Featured in Menya's official newsletter amplified work to 1,000+ stakeholders
+across the African development ecosystem.
+The African Leadership University
+ALU Student Representative Council Financial Treasurer and Integrity
+Board Member
+March 2024 - February 2025 (1 year)
+Gasabo District
+Owned the books for the entire ALU student body — sole signatory on every
+financial transaction across a year-long term.
+Authored and enforced the SRC's budgetary and financial policies — controls
+that survived a leadership transition with zero discrepancies.
+Delivered termly financial statements with full audit transparency to a campus
+of hundreds
+Equity Group Foundation
+College Counselor
+May 2023 - July 2023 (3 months)
+Kenya
+Coached high school graduates from Kenya, Uganda, Rwanda, and DRC
+into fully-funded global scholarships — direct pipeline into top universities
+worldwide.
+Reviewed and rebuilt scholarship essays line-by-line, raising acceptance
+signal across a 4-country applicant pool.
+Engineered targeted SAT prep strategies, compressing student test-prep
+timelines.
+Independent Electoral and Boundaries Commission
+Polling Clerk
+July 2022 - August 2022 (2 months)
+Malindi
+Operated the Kenya Integrated Election Management System (KIEMS) real-
+time biometric voter verification at national-election scale.
+Page 4 of 5
+
+-- 4 of 5 --
+
+Managed polling-station flow under strict regulatory compliance during one of
+Kenya's highest-stakes democratic events.
+Equity Bank Limited
+Pre University Intern ( Equity Leaders Program Scholar)
+May 2021 - September 2021 (5 months)
+Malindi
+Processed cash transactions for 100+ customers daily through Equity's core
+banking system zero reconciliation errors.
+Built and maintained financial records and inventory ledgers early hands-on
+exposure to the fintech operations stack powering East Africa's largest bank by
+customer count.
+Originated customer bank accounts end-to-end through Equity's KYC and
+onboarding systems.
+Education
+The African Leadership University
+Software engineering, Computer Software Engineering · (May 2023 - July
+2026)
+Kisii School
+· (January 2017 - April 2021)
+Page 5 of 5
+
+-- 5 of 5 --
+

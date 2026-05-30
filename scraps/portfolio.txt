@@ -1,0 +1,723 @@
+
+JOHN
+ONGERI
+PORTFOLIO MASTER DOCUMENT
+
+
+Software Engineer  ·  Frontend Specialist  ·  ML Researcher
+Fresh Graduate  ·  African Leadership University
+
+github.com/JohnOngeri  ·  linkedin.com/in/john-ongeri-b01759226
+
+
+This document contains: Portfolio Architecture · Master Build Prompt · UI/UX Skills Research · Tech Stack Reference · Project Framing Guide · Research &amp; Leadership Section Strategy · Links &amp; Resources
+
+TABLE OF CONTENTS
+
+
+PART 1 · THE CORE STRATEGY ......................................... 4
+PART 2 · YOUR GITHUB PROJECTS DECODED .............................. 6
+PART 3 · PORTFOLIO ARCHITECTURE (7 SECTIONS) ....................... 8
+PART 4 · MASTER BUILD PROMPT FOR CLAUDE ........................... 14
+PART 5 · UI/UX SKILLS DEEP RESEARCH ............................... 20
+PART 6 · TECH STACK REFERENCE 2025–2026 ........................... 28
+PART 7 · RESEARCH PAPERS &amp; ACADEMIC SECTION ....................... 34
+PART 8 · LEADERSHIP &amp; COMMUNITY SECTION ........................... 37
+PART 9 · MEDIA GALLERY SECTION (VIDEO/PHOTOS) ..................... 39
+PART 10 · WRITING RULES &amp; COPY GUIDE .............................. 41
+PART 11 · PERFORMANCE &amp; ACCESSIBILITY CHECKLIST ................... 44
+PART 12 · ALL RESOURCE LINKS ...................................... 47
+
+PART 1
+THE CORE STRATEGY
+You are John Ongeri: a fresh Frontend Engineering graduate with a research track record, real ML projects, and range that most developers your age don&apos;t have. Your portfolio must work for three distinct audiences simultaneously — without compromising for any of them.
+
+THE FUNDAMENTAL INSIGHT
+You don&apos;t need a &apos;non-tech&apos; portfolio. You need a HUMAN-FIRST portfolio that happens to show technical skill — not the other way around.
+
+A portfolio that leads with who you are, what problems you solve, and what you&apos;re driven by works for FAANG engineers, works for a general employer who needs someone sharp, and works for a scholarship committee. A portfolio that leads with &apos;I know React and TypeScript&apos; only works for one of those.
+
+YOUR THREE AUDIENCES
+TECH RECRUITERS
+Evidence of real shipped projects with live demos
+Problem-solving under constraints
+ML + Frontend range is rare — lead with it
+Clean GitHub with documented READMEs
+Numbers: accuracy, performance, users, scale
+NON-TECH EMPLOYERS
+Can this person communicate clearly?
+Are they a problem-solver, not just a coder?
+Will they fit a non-engineering team?
+Design quality = proxy for intelligence to them
+Plain-English project descriptions required
+
+SCHOLARSHIP COMMITTEES
+Academic potential and intellectual curiosity
+Initiative beyond coursework (you have this — your ML + Flutter work is proof)
+Clear narrative: where you&apos;ve been → where you are → where you&apos;re going
+Research publications = MAJOR differentiator. Most applicants don&apos;t have these.
+Evidence you&apos;ll contribute to the institution, not just consume it
+
+WHY YOUR PROFILE IS ACTUALLY STRONG
+Most fresh graduates have 2–3 basic CRUD projects. You have a Flutter mobile app with a real ML backend (birth weight prediction API with Swagger UI), a rigorous NLP research project comparing BiLSTM vs Logistic Regression on 50K IMDB reviews, 38 GitHub repositories, and research papers. This is a research-grade profile. Frame it that way.
+
+  Flutter + Dart      ML / Python      NLP / BiLSTM      API Design      Swagger      TypeScript      Research Papers      Leadership  
+
+PART 2
+YOUR GITHUB PROJECTS DECODED
+Based on direct research of your GitHub (github.com/JohnOngeri), here is how to frame your two flagship projects for maximum impact across all three audiences.
+
+PROJECT 01 — Flutter Pregnancy App + ML Backend
+Tech stack: Flutter/Dart · Python · Jupyter Notebook · JavaScript · TypeScript · C++ · REST API · Swagger UI
+GitHub: github.com/JohnOngeri/flutter-pregnancy-app
+Stars: 2 · Forks: 3 · Commits: 76
+
+FOR TECH AUDIENCE (exact copy to use on portfolio):
+Built a cross-platform mobile pregnancy tracker (Flutter/Dart) paired with a machine learning API that predicts birth weight from clinical input features. The ML backend exposes a public REST endpoint documented with Swagger UI, allowing third-party integration. Implemented in Python with a Jupyter-based training pipeline, deployed as a live API service.
+
+Metrics to add: API prediction latency, model accuracy (add your real numbers), number of documented endpoints, test coverage
+
+FOR NON-TECH / SCHOLARSHIP AUDIENCE (exact copy to use on portfolio):
+Built a mobile app to help pregnant women in low-resource settings track their health and predict risks during pregnancy. The app pairs with an AI model that estimates birth weight based on health data — giving healthcare workers an early-warning tool at no cost. Used by [X users] across [X months].
+
+Why this works: Healthcare impact + AI + mobile + low-resource context = extremely compelling for scholarships in CS, HCI, or public health tech
+
+PROJECT 02 — Sentiment Analysis (NLP Research)
+Tech stack: Python · Jupyter Notebook · TensorFlow · Keras · Scikit-learn · Gensim (Word2Vec) · NLTK · Pandas · Matplotlib
+GitHub: github.com/JohnOngeri/Sentiment-Analysis
+Models: Logistic Regression (TF-IDF) · Bidirectional LSTM (Word2Vec) · SVM · Naïve Bayes
+Key result: Logistic Regression 88% accuracy on IMDB; BiLSTM 86% — with formal comparison of trade-offs
+
+FOR TECH AUDIENCE:
+Designed and evaluated four sentiment classification models on the IMDB 50K reviews dataset, comparing TF-IDF + Logistic Regression (88% F1) against a Bidirectional LSTM trained on Word2Vec embeddings (86% F1). Finding: classical ML outperforms deep learning when interpretability and efficiency are constraints — a trade-off analysis with direct relevance to production ML systems.
+
+FOR SCHOLARSHIP AUDIENCE:
+Conducted rigorous empirical research comparing traditional and deep learning approaches to natural language understanding. The study demonstrates that model selection must be driven by deployment constraints — not just accuracy — a finding with implications for AI systems in resource-limited environments.
+
+OTHER REPOSITORIES TO HIGHLIGHT
+alu-higher_level_programming — Python fundamentals (shows CS foundation)
+alu-scripting — Shell scripting (shows systems-level thinking)
+alu-zero_day — First engineering repo (shows the journey, good for &apos;about&apos; narrative)
+Tip: Clean up READMEs across all 38 repos before sharing your GitHub. Recruiters scroll.
+
+PART 3
+PORTFOLIO ARCHITECTURE (7 SECTIONS)
+Your portfolio is a story in 7 chapters. Every chapter speaks to all three audiences simultaneously. Here is the full architecture with exact copy guidance for John Ongeri.
+
+SECTION 1 · HERO — The Entrance
+Full-viewport, typography-only. No image. No avatar. The type IS the personality.
+
+Name display: &quot;JOHN&quot; (small, light weight 200) · &quot;ONGERI&quot; (enormous, weight 900)
+Cycling tagline: &quot;I build things that matter.&quot; → &quot;I turn data into decisions.&quot; → &quot;I design for the person, not the screen.&quot; → &quot;I ship fast, think deep, build wide.&quot;
+One-sentence bio: &quot;Software engineer and ML researcher, fresh from ALU — building at the intersection of technology, health, and human experience.&quot;
+Status badge: &quot;● Open to roles and Masters programs&quot;
+
+SECTION 2 · IMPACT TICKER — The Numbers
+A slow-moving left-to-right marquee of real numbers. Pause on hover.
+
+FILL IN YOUR REAL NUMBERS:
+38 GitHub repositories  ·  4+ production projects  ·  88% ML model accuracy
+2 research papers  ·  3+ leadership positions  ·  [X] countries reached
+Full-Stack · ML · Flutter · Research-grade  ·  Available for remote work
+
+SECTION 3 · ABOUT — The Human Chapter
+Left column: your pull quote. Right column: bio + &apos;what I&apos;m exploring&apos; + skill tags.
+
+Recommended pull quote: &quot;Technology is only as good as the problem it solves — and the person it serves.&quot;
+
+Bio (2–3 sentences): 
+&apos;I&apos;m a software engineer and researcher who just graduated from African Leadership University. I build mobile apps, train ML models, and write research that bridges technology and real-world impact — especially in healthcare and NLP. Currently looking for my next challenge, and considering Masters programs in Computer Science or HCI.&apos;
+
+What I&apos;m exploring (mixed tech + non-tech): 
+Machine learning in low-resource healthcare settings
+Human-computer interaction in emerging markets
+Ethical AI systems and model interpretability
+The gap between research and production ML
+[A personal interest — sport, art, community work]
+
+SECTION 4 · WORK — The Evidence
+Numbered rows, NOT a card grid. Each project expands on hover to show case study.
+
+THE DUAL-REGISTER RULE: Every project needs TWO layers of description.
+
+Human-first line (LARGE): The problem you solved and for whom
+Technical line (SMALL, below): The stack, metrics, architecture
+
+Non-tech reader sees the first line and understands. Tech reviewer reads both and is impressed. Scholarship committee reads both and sees research maturity.
+
+01 · Pregnancy Tracker + ML API
+A mobile health app that gives pregnant women and healthcare workers an AI-powered birth weight prediction tool — designed for low-resource settings.
+  Flutter      Python      ML API      Swagger      Dart      TypeScript  
+
+02 · Sentiment Analysis Research
+Rigorous empirical comparison of four NLP models on 50,000 movie reviews — finding that interpretable classical ML outperforms deep learning when efficiency matters.
+  Python      BiLSTM      TF-IDF      Word2Vec      TensorFlow      Scikit-learn  
+
+SECTION 5 · RESEARCH &amp; LEADERSHIP — The Differentiator
+This section does not exist on most developer portfolios. That is exactly why you include it. It is your biggest edge for scholarships and senior-level roles.
+
+Research Papers Subsection
+Display each paper as a card with: title, journal/venue, year, co-authors, abstract (2 sentences), and a download/view PDF link.
+
+Visual design: Purple accent color (differentiates from projects). DOI or arXiv link. Tags for method + domain.
+
+Placeholder copy (replace with real papers): 
+Paper Title · Venue · Year · Co-authors · [PDF] [DOI]
+One sentence: what the paper studied
+One sentence: what it found
+
+Leadership Positions Subsection
+List roles with: title, organisation, dates, and 2 bullet points of concrete impact.
+
+Frame every role around what you DELIVERED, not what your title was. &apos;Led&apos; is weak. &apos;Led a team of X that achieved Y&apos; is strong.
+
+Example format: 
+PRESIDENT · [Organisation] · 2022–2023
+  Grew membership from 40 to 120 students over 8 months
+  Launched 3 community projects serving [X] people
+
+SECTION 6 · THINKING — The Scholarship Secret Weapon
+Optional for pure tech applications. ESSENTIAL for Masters scholarships. Most developers skip this section — which is precisely why including it makes you stand out.
+
+Format: &quot;Questions I&apos;m chasing right now&quot; — 4–6 genuine intellectual questions. Mix technical and human.
+
+Example questions for John Ongeri:
+How do we build AI-powered health tools that work without internet connectivity?
+When does a classical ML model outperform a neural network — and how do we know when to use which?
+What does accessible software mean when the end user has never owned a smartphone?
+How do we measure the real-world impact of a research paper, not just its citations?
+
+SECTION 7 · CONTACT — The Close
+Headline: &quot;Let&apos;s build something worth building.&quot;
+Sub: &quot;Or talk about research. Or Masters programs. I&apos;m open.&quot;
+
+Email address (clickable mailto:)
+GitHub: github.com/JohnOngeri
+LinkedIn: linkedin.com/in/john-ongeri-b01759226
+Downloadable CV/Resume button (PDF) — CRITICAL for non-tech employers
+Academic note: &apos;Considering Masters programmes in CS/HCI for 2025–2026 intake&apos;
+
+PART 4
+MASTER BUILD PROMPT FOR CLAUDE
+Paste this ENTIRE block into Claude (chat or Claude Code) with your real details filled in. It is engineered to produce a FAANG-quality, universally applicable portfolio — not a generic template.
+
+STEP 1 — FILL IN YOUR DETAILS
+[YOUR_FIRST_NAME] → JOHN
+[YOUR_LAST_NAME] → ONGERI
+[YOUR_UNIVERSITY] → African Leadership University (ALU)
+[YOUR_EMAIL] → your real email address
+[YOUR_GITHUB] → https://github.com/JohnOngeri
+[YOUR_LINKEDIN] → https://linkedin.com/in/john-ongeri-b01759226
+[YOUR_TAGLINE_1/2/3/4] → &quot;I build things that matter.&quot; / &quot;I turn data into decisions.&quot; / &quot;I design for people, not screens.&quot; / &quot;I ship fast, think deep, build wide.&quot;
+[YOUR_PULL_QUOTE] → &quot;Technology is only as good as the problem it solves — and the person it serves.&quot;
+[YOUR_STATUS] → &quot;Open to roles and Masters programmes&quot;
+
+STEP 2 — THE FULL PROMPT (copy everything below this line)
+
+
+ROLE
+You are a world-class principal UI/UX designer and creative developer who has shipped at Apple, Stripe, and Linear. You build portfolios that make hiring managers stop scrolling and scholarship committees lean forward. Your work is narrative-driven, technically impressive, and deeply personal.
+
+SUBJECT
+Build a single-page React portfolio (JSX artifact) for JOHN ONGERI — a fresh Frontend Engineering graduate from African Leadership University, Kenya. He has ML projects, NLP research, a Flutter app with a live API, research publications, and leadership roles. The portfolio must work for FAANG tech roles, general employment opportunities, AND Masters scholarship applications — simultaneously.
+
+AESTHETIC
+Sophisticated light editorial. Background: #FAFAF8. Primary text: #111111. Accent: #1A56DB. Secondary accent: #7C3AED (purple — for research section only). Typography: Playfair Display (display) + JetBrains Mono (labels/code) + DM Sans (body). Loaded via Google Fonts in a useEffect style injection.
+NOT dark/hacker aesthetic. NOT purple gradients. NOT card grids. NOT centered hero with avatar. This portfolio will be seen by HR managers at non-tech companies AND scholarship panels AND FAANG engineers.
+
+STRUCTURE — 7 SECTIONS
+Implement these sections in this exact order:
+
+SECTION 1 — HERO:
+Full-viewport, text only. Name split across two lines: &apos;JOHN&apos; small/light, &apos;ONGERI&apos; enormous/bold. Typewriter cycling through: &apos;I build things that matter.&apos; / &apos;I turn data into decisions.&apos; / &apos;I design for people, not screens.&apos; / &apos;I ship fast, think deep, build wide.&apos; Bottom-left: pulsing green status badge &apos;● Open to roles and Masters programmes&apos;. Bottom-right: vertical scroll hint in mono. Staggered entrance: name first → tagline 100ms → hints 200ms.
+
+SECTION 2 — IMPACT TICKER:
+Full-width slow marquee: &apos;38 repos on GitHub · ML accuracy 88% · Flutter + Python + TypeScript · Healthcare AI builder · NLP researcher · Open to remote · Available now&apos;. Pauses on hover.
+
+SECTION 3 — ABOUT:
+Split layout. LEFT: large Playfair pull-quote in italics: &apos;Technology is only as good as the problem it solves — and the person it serves.&apos; RIGHT: 3-block column: (A) 3-sentence bio mentioning ALU, healthcare ML, NLP research; (B) &apos;What I&apos;m exploring&apos; list of 5 items — mixed tech/human interests; (C) skill tags grouped by category.
+
+SECTION 4 — WORK:
+Numbered rows. 01: Flutter Pregnancy App + ML API — show human-first description large, tech stack small. 02: Sentiment Analysis NLP Research — show research framing large, methodology small. 03: [Placeholder for third project]. On hover each row expands in-place: left accent border appears in #1A56DB, background shifts to rgba(26,86,219,0.04), case study excerpt fades in with GitHub + demo links.
+
+SECTION 5 — RESEARCH &amp; LEADERSHIP:
+TWO subsections. 5A: Research Papers — each paper displayed as a row with title, venue, year, authors, 2-sentence abstract, PDF and DOI links. Purple (#7C3AED) accent color. Space for PDF uploads (use placeholder UI: &apos;Paper title · [Attach PDF]&apos;). 5B: Leadership Positions — timeline-style list, each entry with title, org, dates, and 2 bullet impact points in amber accent color (#B45309).
+
+SECTION 6 — THINKING:
+&apos;Questions I&apos;m chasing&apos; section. 4 questions displayed as large numbered items in Playfair italic. These signal scholarship readiness. Include: healthcare AI in low-resource settings, classical vs deep learning trade-offs, accessibility in emerging markets, measuring research impact.
+
+SECTION 7 — CONTACT:
+Large centered heading: &apos;Let&apos;s build something worth building.&apos; Sub: &apos;Or talk research. Or Masters programmes. I&apos;m open.&apos; Email in JetBrains Mono. GitHub + LinkedIn icon links (SVG, no library). Downloadable CV button (primary CTA). Academic note: &apos;Considering Masters programmes in CS/HCI/ML for 2025–2026 intake.&apos;
+
+INTERACTIONS
+Custom cursor: 10px circle, lerp factor 0.15. Grows to 36px on hover elements. Hidden on touch devices (pointer: coarse).
+Scroll reveal: IntersectionObserver threshold 0.15. opacity 0→1, translateY(28px)→0, 0.55s ease-out. Stagger children 80ms.
+Project row hover: max-height expansion, left border #1A56DB appears, background rgba(26,86,219,0.04).
+Typewriter: useEffect + setInterval, 3-second display, 100ms type, 60ms erase.
+Marquee: CSS animation, pauses via animation-play-state on hover.
+prefers-reduced-motion: disable ALL animations for accessibility.
+
+MEDIA ATTACHMENTS (user will provide)
+Build placeholder UI for: research paper PDFs (a card with &apos;Attach PDF&apos; button), project demo videos (YouTube embed placeholder), photos/headshot (optional — keep as alt display, not hero). Do not block the design on media — use graceful fallbacks.
+
+NON-NEGOTIABLES
+No card grids · No centered hero with avatar/CTA · No dark hacker aesthetic
+Custom cursor with lerp · Typewriter effect · Marquee ticker
+Dual-register project descriptions (human first, technical second)
+Research &amp; Leadership section (distinct from Projects)
+Downloadable CV button in Contact section
+Mobile-first responsive (sm/md/lg breakpoints)
+prefers-reduced-motion respected · Semantic HTML · ARIA labels
+Lighthouse 95+ target: no heavy synchronous JS, images lazy-loaded, font-display:swap
+Single JSX file · useState + useEffect + useRef only · Tailwind for layout
+
+QUALITY BAR
+Before outputting, internally verify: Would a Staff Engineer at Google forward this link to a recruiter without being asked? Would a scholarship committee visiting this site feel they are looking at a serious candidate? If either answer is no — rebuild the section that fails.
+
+
+END OF MASTER PROMPT. Everything above this line is what you paste into Claude.
+
+PART 5
+UI/UX SKILLS DEEP RESEARCH
+Sourced from GitHub topics, Codrops, Awwwards, Nielsen Norman Group, and FAANG interview research — May 2026. These are the skills that visually distinguish a world-class portfolio from a template.
+
+VISUAL DESIGN FOUNDATIONS
+Typography Hierarchy
+Display fonts (Playfair Display, Fraunces, DM Serif) for emotional hero moments
+Monospace (JetBrains Mono, Fira Code) for code, labels, and data — signals technical precision
+Clean sans (DM Sans, Inter, Plus Jakarta) for body copy — readability first
+Size scale: hero display 80–120px · section titles 36–48px · body 16–18px · labels 12–14px
+Line height: 1.2 for display · 1.5–1.6 for body · 1.8 for long prose
+Letter-spacing: +0.05em on all-caps labels · normal on body
+
+Color Systems
+Near-black (#0A0A0A or #111111) vs pure black — softer, more sophisticated
+Warm off-white (#FAFAF8 or #F5F4F0) vs pure white — editorial quality
+One strong accent maximum. Two accent hues for multi-domain portfolios (blue + purple works for tech + research)
+Color roles: accent for interactive elements and links · amber for leadership/experience · purple for research/academic · green for results/impact
+Accessible contrast: ≥4.5:1 normal text · ≥3:1 large text (WCAG 2.2)
+
+Layout Principles That Signal Craft
+Asymmetric grids — break the 12-column prison
+Large negative space — white space is not wasted space, it&apos;s breathing room
+Text that bleeds to edge on mobile — signals intentional mobile-first design
+Split-screen: static left, dynamic right — creates kinetic interest without JS
+Sticky sidebar navigation — signals understanding of user orientation in long pages
+Numbered items (01, 02) in display type — editorial, memorable, unique
+Horizontal scroll sections — used sparingly for &apos;process&apos; or &apos;journey&apos; content
+
+INTERACTION DESIGN — WHAT SIGNALS SENIOR CRAFT
+Micro-interactions That Matter
+Lerp cursor (linear interpolation) — small circle, 15% lag factor — signals deep CSS/JS knowledge
+Hover state transformations — meaningful, not decorative (reveal content, show depth)
+Typewriter effect — built from scratch (not a library) — shows you understand setInterval and DOM timing
+Marquee/ticker with hover pause — shows you handle animation-play-state
+Staggered entrance animations — 80–120ms delays signal choreography thinking
+Loading states — even on portfolio, a brief entrance sequence shows UX maturity
+Scroll progress indicator — thin line at top — subtle signal of attention to detail
+
+What to AVOID (signals template/junior work)
+Particle.js backgrounds — overused, 2017 aesthetic
+Skill percentage bars — subjective, meaningless, and visually weak
+&apos;Floating&apos; navigation pill/bubble — now associated with Framer templates
+Card grid for projects — the most common pattern, therefore the most forgettable
+Purple gradient on white — the default Tailwind aesthetic
+Bounce animations — unprofessional, not cinematic
+Modals for project details — breaks scroll flow, feels like a side-quest
+
+SCROLL &amp; ANIMATION TECHNIQUES
+IntersectionObserver (no library required)
+The correct approach for a portfolio that must score 95+ on Lighthouse. No Framer Motion, no AOS.js — just native browser APIs.
+Pattern:
+const observer = new IntersectionObserver((entries) =&gt; { entries.forEach(e =&gt; { if (e.isIntersecting) e.target.classList.add(&apos;visible&apos;); }); }, { threshold: 0.15 });
+
+CSS:
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease-out, transform 0.55s ease-out; } .reveal.visible { opacity: 1; transform: translateY(0); }
+
+Stagger:
+.reveal:nth-child(1) { transition-delay: 0ms; } .reveal:nth-child(2) { transition-delay: 80ms; } .reveal:nth-child(3) { transition-delay: 160ms; }
+
+Lerp Cursor (pure JavaScript)
+let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+document.addEventListener(&apos;mousemove&apos;, e =&gt; { mouseX = e.clientX; mouseY = e.clientY; });
+function animate() {
+  cursorX += (mouseX - cursorX) * 0.15; // 0.15 = lerp factor
+  cursorY += (mouseY - cursorY) * 0.15;
+  cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+  requestAnimationFrame(animate);
+}
+animate();
+
+ADVANCED ANIMATION STACK (for Claude Code / standalone build)
+GSAP + ScrollTrigger + Lenis — Industry Standard Trio
+Lenis (lenis.dev) — butter-smooth scroll, used by top agencies worldwide. Syncs with GSAP ticker.
+GSAP ScrollTrigger — attaches GSAP timelines to scroll position. Enables cinematic reveals.
+Three.js / React Three Fiber — WebGL for 3D elements. Use for subtle background, not hero gimmick.
+
+Lenis + GSAP sync pattern:
+const lenis = new Lenis();
+lenis.on(&apos;scroll&apos;, ScrollTrigger.update);
+gsap.ticker.add((time) =&gt; { lenis.raf(time * 1000); });
+gsap.ticker.lagSmoothing(0);
+
+Key sources for learning these: tympanus.net/codrops · frontend.horse · wawasensei.dev · blog.olivierlarose.com
+
+PART 6
+TECH STACK REFERENCE 2025–2026
+What FAANG engineering managers and senior developers expect to see in 2026. Signal levels based on MockExperts, Interview Kickstart, and KraftCV research.
+
+FRONTEND FRAMEWORK — SIGNAL TABLE
+Tool
+Signal Level
+Notes
+Next.js 14/15 (App Router)
+🔥 Very High
+Server Components, streaming, Server Actions — must know
+React 19
+High
+Concurrent features, use() hook, Actions
+TypeScript 5.x
+Table Stakes
+Required at senior level — conditional types, mapped types
+Tailwind CSS v4
+High
+Utility-first; now with native CSS variables
+Flutter / Dart
+High (Mobile)
+You already have this — rare among web-focused devs
+Python (ML)
+High (ML roles)
+You have this — TensorFlow, Keras, scikit-learn, Pandas
+
+ANIMATION &amp; INTERACTION TOOLS
+Tool
+Signal
+Notes
+GSAP + ScrollTrigger
+🔥 Very High
+Industry standard for scroll animation
+Lenis
+🔥 Very High
+Smooth scroll — used by top agencies globally
+Framer Motion / Motion
+High
+Declarative React animation — whileInView, useScroll
+React Three Fiber
+High
+Three.js for React — scroll-driven 3D
+Three.js
+High
+WebGL — pair with GSAP ScrollTrigger
+CSS @scroll-timeline
+Medium
+Native scroll-driven animations (Chrome 115+)
+
+CORE WEB VITALS — 2025/2026 STANDARDS
+CRITICAL UPDATE: FID (First Input Delay) was replaced by INP (Interaction to Next Paint) in March 2024. If you&apos;re reading content from before 2024, ignore FID references.
+
+LCP (Largest Contentful Paint): ≤ 2.5s = Good · ≤ 1.5s = Exceptional. Optimize: preload hints, image compression, SSR.
+INP (Interaction to Next Paint): ≤ 200ms = Good. Measures ALL interactions, not just first. Far stricter than FID.
+CLS (Cumulative Layout Shift): ≤ 0.1 = Good · ≤ 0.05 = Exceptional. Reserve sizes for all images, avoid injecting above fold.
+
+Target for your portfolio: LCP &lt; 1.5s · INP &lt; 100ms · CLS &lt; 0.05 · Lighthouse Performance ≥ 95 · Accessibility 100 · SEO 100
+
+ACCESSIBILITY — WCAG 2.2 (ISO/IEC 40500:2025)
+WCAG 2.2 is now an ISO international standard — knowing this signals that you&apos;re current
+Semantic HTML: &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;nav&gt;, &lt;aside&gt; — required, not optional
+ARIA: aria-label, aria-labelledby, aria-describedby, aria-live for dynamic content
+Color contrast ≥ 4.5:1 for normal text · ≥ 3:1 for large text
+Touch targets ≥ 24×24px (new in WCAG 2.2 — shows you&apos;re current)
+Focus indicators visible and sized (new WCAG 2.2 criterion)
+prefers-reduced-motion: disable ALL animations — test this yourself
+Keyboard navigation: every interactive element reachable, logical tab order
+Test with: Lighthouse accessibility score · axe-core · Pa11y · manual keyboard test
+
+HIGH-VALUE KEYWORDS (ATS + Recruiter Scan 2026)
+Per ResumeAdapter 2025 research — these are the terms recruiters search for:
+  TypeScript      GraphQL      Cloud Infrastructure      Microservices      System Design  
+  REST APIs      React Server Components      Edge Runtime      WebSockets      WebGL  
+  Flutter      TensorFlow      NLP      BiLSTM      Word2Vec      Scikit-learn  
+  Next.js      Tailwind      GSAP      Three.js      Framer Motion      Lenis  
+
+PART 7
+RESEARCH PAPERS &amp; ACADEMIC SECTION
+This section is your single biggest differentiator. Most fresh graduates applying for jobs or scholarships do not have published or submitted research. You do. Here is how to build and use this section.
+
+WHY THIS SECTION WINS
+Scholarship committees: Research publications are weighted extremely heavily. One paper can be the difference between shortlist and offer.
+FAANG / large tech companies: Staff engineers at Google, DeepMind, Meta AI, and similar teams frequently publish. A research track record at entry level signals you can operate at the intersection of engineering and inquiry — rare.
+Non-tech employers: Even if they don&apos;t fully understand the paper, seeing &apos;Published Research&apos; signals intelligence, rigour, and the ability to complete long-form intellectual work. It builds trust.
+
+HOW TO BUILD THE RESEARCH SECTION IN YOUR PORTFOLIO
+Visual Design
+Use PURPLE accent (#7C3AED) exclusively for this section — differentiate it visually from the project section (blue) and leadership section (amber)
+Display each paper as a full-width row — NOT a card grid
+Each row: left side = paper metadata · right side = abstract snippet + links
+A small &apos;RESEARCH&apos; label in mono above the section heading — signals intentionality
+
+Paper Entry Structure (use for each paper)
+Title: [Full paper title]
+Venue / Journal: [Conference name, journal name, or &apos;Submitted to X&apos;]
+Year: [Year of publication or submission]
+Authors: [John Ongeri, Co-author 1, Co-author 2, ...]
+Abstract (2 sentences): [What was studied] · [What was found / contributed]
+Tags: [Method tags, e.g., NLP · BiLSTM · Sentiment Analysis · Healthcare AI]
+Links: [View PDF] · [DOI / arXiv] · [GitHub code]
+
+PLACEHOLDER — Fill with your real papers
+PAPER 01 (from GitHub):
+Your Sentiment Analysis project (github.com/JohnOngeri/Sentiment-Analysis) includes a formal academic report: Sentiment_Analysis_Report.pdf. If this was submitted or published, it qualifies as a research paper. Frame it as:
+
+Title: &quot;Comparative Analysis of Traditional Machine Learning and Deep Learning Approaches for Sentiment Classification&quot;
+Venue: [Your university capstone / submitted conference — fill in]
+Key finding: Logistic Regression (TF-IDF) achieved 88% F1-score vs BiLSTM (86%), demonstrating that classical ML outperforms deep learning in resource-constrained classification tasks.
+Tags: NLP · Sentiment Analysis · BiLSTM · TF-IDF · Logistic Regression · TensorFlow
+
+PAPER 02:
+Birth Weight Prediction using Machine Learning — based on your Flutter pregnancy app ML model. If this work is documented formally (even as a report), frame it as a research project.
+
+Suggested title: &quot;Machine Learning-Based Birth Weight Prediction for Low-Resource Healthcare Settings&quot;
+Attach: Your ML documentation, Swagger API docs, and any formal write-up
+
+When you have your actual papers ready — ATTACH THEM as PDFs when prompting Claude to build the portfolio. Include the instruction: &apos;I am attaching [X] research papers as PDFs. Parse the title, authors, abstract, and venue from each PDF and build the Research section accordingly.&apos;
+
+IF YOU DON&apos;T YET HAVE FORMAL PUBLICATIONS
+Your Sentiment Analysis report (the PDF in the repo) can be listed as &apos;Technical Report&apos; with the ALU branding — this is legitimate
+Write a short summary post about your ML project on dev.to, Medium, or your portfolio blog — this becomes citable content
+Consider submitting to an undergraduate research conference before your Masters applications — even a regional ACM chapter or IEEE student conference counts
+arXiv.org allows pre-print submission at no cost — your sentiment analysis or pregnancy ML work could be submitted as a pre-print
+
+PART 8
+LEADERSHIP &amp; COMMUNITY SECTION
+Leadership experience is what separates candidates in scholarship applications and senior hiring. Even at entry level, it signals that you multiply impact — you make others better, not just yourself.
+
+HOW TO FRAME LEADERSHIP ROLES
+The rule: Never describe your title. Describe your impact. A &apos;President&apos; who grew nothing is less impressive than a &apos;Member&apos; who started a new programme.
+
+Formula: &quot;[Role] · [Org] · [Dates]&quot; followed by 2 bullet points: (1) what you built/grew/delivered, (2) what it produced in concrete terms
+
+Example:
+TECHNOLOGY LEAD · ALU Innovation Club · 2022–2023
+Built and maintained the club&apos;s project showcase platform using React and Airtable, reducing event coordination time by 60%
+Mentored 12 first-year students on web development fundamentals; 8 went on to build their own projects
+
+LEADERSHIP ENTRY TEMPLATE
+[ROLE TITLE IN CAPS] · [Organisation Name] · [Start Date] – [End Date or Present]
+
+Impact bullet 1: [What you built, launched, grew, or delivered] — with a number
+Impact bullet 2: [Who benefited and how] — with a number or outcome
+
+Optional — media: [Photo from the event / video link / press mention — attach when prompting Claude]
+
+VISUAL DESIGN FOR LEADERSHIP SECTION
+Use AMBER accent (#B45309 on #FEF3C7 background) to differentiate from Projects (blue) and Research (purple)
+Timeline layout: left column = year/date markers in mono · right column = role details
+Small &apos;LEADERSHIP&apos; label in mono above the section heading
+Each entry separated by a subtle horizontal rule
+If you have photos from events — use them here. Real photos of real events signal authenticity.
+
+COMMUNITY &amp; EXTRACURRICULAR
+Beyond formal leadership roles, include any community tech work:
+Open source contributions (even small PRs count — they show you work in teams)
+Hackathon participation and results
+Teaching / tutoring / mentoring other students
+Community tech events you organised or spoke at
+Online communities you contribute to (Discord, GitHub Discussions, Stack Overflow)
+Tip: When prompting Claude to build this section, write: &apos;I will attach photos from my leadership activities. Use them in the Leadership section with captions.&apos;
+
+PART 9
+MEDIA GALLERY SECTION (VIDEO / PHOTOS)
+Visual media — project demo videos, photos from events, team photos — makes the portfolio feel alive and human. It&apos;s the difference between a document and a presence.
+
+VIDEO INTEGRATION
+Project Demo Videos
+Each major project should have a ≤2 minute demo video. Your Flutter pregnancy app README already mentions a YouTube demo link — use it.
+
+Host on YouTube (unlisted is fine) — embed via iframe in portfolio
+Fallback: animated GIF or screen recording loop if no video exists
+Thumbnail: static screenshot with a play button overlay — shows content before load
+Caption: one sentence explaining what the video shows
+
+Claude prompt for video section: 
+&quot;Build a video showcase section. For each project, embed a YouTube video (URL: [YOUR_URL]). Use a 16:9 ratio iframe with lazy loading. Include a title, one-sentence caption, and a fallback thumbnail with play button if the video fails to load. Reduced-motion users see a static thumbnail only.&quot;
+
+PHOTOS &amp; IMAGES
+Types of Images Worth Including
+Headshot / portrait — used ONLY in the About section (never hero) — warm, natural lighting
+Event photos — hackathons, leadership events, community activities — authentic signal
+Project screenshots — use in the Work section hover-expand, not as hero images
+Team photos — signals you work with others, important for non-tech employers
+
+Claude Prompt for Photos
+When you are ready to add photos, attach them and add this to your Claude prompt:
+
+&quot;I am attaching [X] images. Please use them as follows:
+- [photo1.jpg] = my headshot for the About section
+- [photo2.jpg] = event photo for the Leadership section, [Event Name, Date]
+- [screenshot1.png] = project screenshot for the Pregnancy App in the Work section
+- [screenshot2.png] = data visualization from the Sentiment Analysis project
+Use each image in the specified section with a short caption.&quot;
+
+PERFORMANCE RULES FOR MEDIA
+All images: use Next.js &lt;Image /&gt; component with lazy loading + proper sizes attribute
+WebP format where possible — 25–35% smaller than JPEG at same quality
+Maximum image width: 1200px for full-width · 800px for inline
+Videos: never autoplay with sound · muted autoplay loop is acceptable for demo reels
+Lazy load all below-fold images — critical for LCP score
+Blur-up placeholder (low-quality image placeholder = LQIP) — Next.js blurDataURL prop
+Alt text on every image — required for WCAG 2.2 compliance and SEO
+
+PART 10
+WRITING RULES &amp; COPY GUIDE
+The quality of your writing IS a signal of the quality of your thinking. Every word on your portfolio is being evaluated — especially by non-technical reviewers and scholarship committees.
+
+THE DUAL-REGISTER RULE (Most Important)
+Every project description must work in TWO registers simultaneously.
+
+Human register (LARGE, top line): The problem you solved and for whom — no jargon
+Technical register (SMALL, below): The stack, metrics, and architecture
+
+Non-tech reader sees the first line and understands. Tech reviewer reads both. Scholarship committee reads both and sees research maturity.
+
+WEAK: &quot;Implemented RESTful API with JWT authentication and TF-IDF vectorization for sentiment classification.&quot;
+
+STRONG: &quot;Built a tool that helps healthcare workers identify at-risk pregnancies using an AI model — available as a free public API. [SMALL: Python · REST · Swagger UI · Flutter · ML model accuracy: 88%]&quot;
+
+PHRASES TO AVOID
+DON&apos;T say this ❌
+SAY this instead ✅
+Passionate about technology
+I care about [specific thing] because [specific reason]
+I love solving problems
+Built X for Y people, which reduced Z by W%
+Detail-oriented team player
+Led a team of X that delivered Y in Z weeks
+Proficient in React
+React: used in 5 production projects, most recently [name]
+Responsible for...
+Delivered / Built / Launched / Reduced / Grew...
+I am interested in...
+I am currently building / studying / researching...
+Experience with...
+Deployed / Shipped / Published / Measured...
+
+VOICE GUIDELINES
+First person, present tense, active voice: &apos;I build&apos; not &apos;I have experience building&apos;
+Confident, not arrogant: state facts, not claims (&apos;I shipped X&apos; not &apos;I am expert at X&apos;)
+Short sentences in hero and about sections. Longer sentences acceptable in case studies.
+No walls of text anywhere — max 3 sentences per paragraph
+Grammar and punctuation matter enormously for scholarship committees — proofread everything
+British or American English consistently — choose one, do not mix
+
+PART 11
+PERFORMANCE &amp; ACCESSIBILITY CHECKLIST
+Use this checklist before deploying your portfolio. Each item corresponds to something a FAANG engineer, non-tech reviewer, or scholarship committee will notice (or their tools will flag).
+
+BEFORE YOU DEPLOY — 24-POINT CHECKLIST
+VISUAL &amp; DESIGN
+□  No card grid for projects — numbered rows with hover-expand
+□  No centered hero with avatar + single CTA button
+□  Custom cursor with lerp implemented
+□  Typewriter effect cycling ≥ 3 phrases
+□  Marquee stats bar with real numbers, pauses on hover
+□  Research section uses purple accent (distinct from blue projects)
+□  Leadership section uses amber accent
+□  Mobile layout tested on real phone or Chrome DevTools 375px
+
+CONTENT &amp; COPY
+□  Every project has dual-register description (human first, tech second)
+□  Research papers section included with PDF links
+□  Leadership section included with impact bullets
+□  &apos;What I&apos;m exploring&apos; block in About section
+□  Downloadable CV/Resume button in Contact section
+□  No broken links (test every single link manually)
+□  No typos or grammar errors (have someone else read it)
+
+PERFORMANCE
+□  Lighthouse Performance ≥ 95
+□  LCP &lt; 2.5s (ideally &lt; 1.5s)
+□  INP &lt; 200ms
+□  CLS &lt; 0.1
+□  All images lazy-loaded, WebP format, with width/height specified
+□  Font loading: font-display: swap, preconnect to Google Fonts
+
+ACCESSIBILITY
+□  Lighthouse Accessibility score = 100
+□  prefers-reduced-motion disables ALL animations
+□  All images have alt text
+□  All interactive elements keyboard-reachable (Tab key navigation works)
+□  Color contrast ≥ 4.5:1 for all body text
+□  Semantic HTML throughout (&lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;nav&gt;)
+
+DEPLOYMENT RECOMMENDATION
+Host on Vercel (recommended): vercel.com — free tier, automatic HTTPS, built-in analytics, Vercel Speed Insights for real CWV monitoring
+
+Domain: johnongeri.com or johnongeri.dev — ~$10/year on Namecheap or Google Domains. Non-tech employers notice the difference between .com and .github.io.
+
+Analytics: Add Vercel Analytics (free) — shows you real user data. Screenshot the analytics dashboard and add it to your portfolio as a &apos;live stats&apos; badge.
+
+PART 12
+ALL RESOURCE LINKS
+Every external resource referenced in this document, organised by category. All verified as of May 2026.
+
+YOUR PROFILES
+GitHub: https://github.com/JohnOngeri
+LinkedIn: https://linkedin.com/in/john-ongeri-b01759226
+GitHub Repo 1: https://github.com/JohnOngeri/flutter-pregnancy-app
+GitHub Repo 2: https://github.com/JohnOngeri/Sentiment-Analysis
+
+ANIMATION &amp; CREATIVE DEVELOPMENT
+Codrops — Cinematic 3D Scroll with GSAP + Three.js: https://tympanus.net/codrops/2025/11/19/how-to-build-cinematic-3d-scroll-experiences-with-gsap/
+Codrops — WebGL Gallery with GSAP + Three.js + Astro + Barba.js: https://tympanus.net/codrops/2026/02/02/building-a-scroll-revealed-webgl-gallery-with-gsap-three-js-astro-and-barba-js/
+Lenis Smooth Scroll (official site): https://www.lenis.dev/
+Lenis GitHub repository: https://github.com/darkroomengineering/lenis
+GSAP 317 examples: https://freefrontend.com/gsap-js/
+Wawa Sensei — 3D Portfolio React Three Fiber: https://wawasensei.dev/tuto/build-a-3D-portfolio-with-react-three-fiber-framer-motion-scroll-animations
+Olivier Larose — 3D Earth Scroll Tutorial: https://blog.olivierlarose.com/tutorials/3d-earth
+Frontend Horse — Three.js + GSAP ScrollTrigger: https://frontend.horse/episode/using-threejs-with-gsap-scrolltrigger/
+Dribbble — Jan Kohlbach animations: https://dribbble.com/jankohlbach/shots
+
+FAANG INTERVIEW &amp; HIRING RESEARCH
+MockExperts — Frontend Engineering 2026 (current FAANG patterns): https://www.mockexperts.com/blog/frontend-engineering-2026-performance-dx
+Interview Kickstart — Frontend Engineering Masterclass: https://interviewkickstart.com/courses/front-end-engineering-interview-masterclass
+KraftCV — Software Engineer Resume Guide 2026: https://www.kraftcv.com/blog/software-engineer-resume-guide-2026
+DesignGurus — Best Resume Formats for FAANG 2025: https://www.designgurus.io/blog/best-resume-formats-for-faang-and-top-tech-companies-2025
+Senior Next.js Engineer traits: https://digiqt.com/blog/senior-nextjs-engineer-traits/
+System Design Trade-offs for FAANG 2025: https://www.designgurus.io/blog/system-design-trade-offs-in-2025-a-step-by-step-framework-for-faang-interviews
+Senior Frontend Developer Roadmap 2025: https://www.theseniordev.com/blog/senior-frontend-developer-roadmap-2025
+
+CORE WEB VITALS &amp; PERFORMANCE
+Core Web Vitals guide 2026 (LCP, INP, CLS): https://www.corewebvitals.io/core-web-vitals
+NitroPack — Most Important CWV 2026: https://nitropack.io/blog/most-important-core-web-vitals-metrics/
+aTeam — CWV optimization guide with code: https://www.ateamsoftsolutions.com/core-web-vitals-optimization-guide-2025-showing-lcp-inp-cls-metrics-and-performance-improvement-strategies-for-web-applications/
+Mewa Studio — SEO &amp; Core Web Vitals 2026: https://www.mewastudio.com/en/blog/seo-core-web-vitals-2026
+OWDT — How to improve Core Web Vitals in 2025: https://owdt.com/insight/how-to-improve-core-web-vitals/
+
+ACCESSIBILITY
+WCAG 2.2 deep reference (arc42 quality model): https://quality.arc42.org/standards/wcag-2-2
+ARIA best practices with examples: https://accesstive.com/blog/aria-best-practices-and-examples/
+Web Accessibility best practices 2025: https://www.broworks.net/blog/web-accessibility-best-practices-2025-guide
+WCAG 2.2 complete checklist: https://www.thewcag.com/best-practices
+
+PORTFOLIO INSPIRATION
+Colorlib — 21 best developer portfolios 2026: https://colorlib.com/wp/developer-portfolios/
+WebPortfolios.dev — best developer portfolio websites: https://www.webportfolios.dev/blog/best-developer-portfolio-websites
+GitHub topics: portfolio-website: https://github.com/topics/portfolio-website
+GitHub topics: developer-portfolio: https://github.com/topics/developer-portfolio
+GitHub topics: framer-motion-3d: https://github.com/topics/framer-motion-3d
+GitHub topics: lenis: https://github.com/topics/lenis?l=javascript
+
+NEXT.JS &amp; ARCHITECTURE
+Next.js Advanced Techniques 2026: https://medium.com/@elizacodewell72/next-js-advanced-techniques-2026-15-pro-level-tips-every-senior-developer-must-master-0b264649980e
+2025 React Frontend Roadmap: https://dev.to/tak089/2025-react-frontend-roadmap-beginner-to-senior-level-5g25
+
+RESEARCH PUBLISHING (for Papers Section)
+arXiv.org — free pre-print submission: https://arxiv.org/
+ACM Digital Library — find student conference CFPs: https://dl.acm.org/
+IEEE Xplore — student conferences: https://ieeexplore.ieee.org/
+Hugging Face Datasets (referenced in your Sentiment Analysis project): https://huggingface.co/datasets/imdb
+
+
+
+JOHN ONGERI · PORTFOLIO MASTER DOCUMENT
+Compiled May 2026 · github.com/JohnOngeri · linkedin.com/in/john-ongeri-b01759226

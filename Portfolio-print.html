@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>John Ongeri — Portfolio (Print)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300..900;1,300..900&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" />
+
+<link rel="stylesheet" href="portfolio.css" />
+
+<style>
+/* ===========================================================
+   PRINT OVERRIDES
+   =========================================================== */
+
+/* Print page setup — portrait A4, comfortable margins for body content */
+@page {
+  size: A4 portrait;
+  margin: 14mm 12mm;
+}
+
+/* Honour designed colours when printing */
+html, body {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  background: #ffffff !important;
+}
+
+/* Disable every animation / transition globally so layout is stable */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Kill non-print chrome */
+#scroll-progress,
+.nav,
+.cursor-dot, .cursor-ring,
+.ambient-light, .grain,
+.scroll-hint,
+.pdf-modal {
+  display: none !important;
+}
+
+/* Hero — strip kinetic frame, just show the text */
+.hero {
+  min-height: auto !important;
+  padding: 0 0 24px !important;
+  background: #ffffff !important;
+  overflow: visible !important;
+  break-after: page;
+}
+.hero-name .first {
+  font-size: 36pt !important;
+}
+.hero-name .first-inner {
+  transform: none !important;
+}
+.hero-name .last {
+  font-size: 92pt !important;
+  font-variation-settings: "wght" 900 !important;
+  white-space: normal !important;
+}
+.ong-letter {
+  font-variation-settings: "wght" 900 !important;
+}
+.hero-tagline,
+.hero-tagline--kinetic {
+  font-size: 18pt !important;
+  margin-top: 18pt !important;
+}
+.hero-word {
+  opacity: 1 !important;
+  transform: none !important;
+  display: inline !important;
+  margin-right: 0.28em;
+}
+.hero-fade {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.hero-bio {
+  font-size: 11pt !important;
+  margin-top: 14pt !important;
+}
+.hero-bio-row {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr !important;
+  gap: 18pt !important;
+  align-items: start !important;
+  margin-top: 18pt !important;
+}
+.hero-photos {
+  position: relative !important;
+  height: 200pt !important;
+  max-width: 240pt !important;
+}
+.hero-photo {
+  box-shadow: none !important;
+}
+.hero-photo--back { transform: rotate(-3deg) !important; }
+.hero-photo--front { transform: rotate(2deg) !important; }
+
+/* Meta strip */
+.hero-meta-top {
+  font-size: 8pt !important;
+  padding-bottom: 18pt !important;
+}
+
+/* Status badge */
+.status-badge .pulse::after { animation: none !important; }
+.hero-bottom {
+  display: flex !important;
+  margin-top: 20pt !important;
+}
+
+/* Sections — generous breaks */
+.section {
+  padding: 18pt 0 !important;
+  break-inside: avoid;
+}
+.section-head {
+  margin-bottom: 18pt !important;
+  padding-bottom: 12pt !important;
+}
+.section-head h2 {
+  font-size: 28pt !important;
+}
+.section-head .desc {
+  font-size: 10pt !important;
+}
+
+/* Ticker — print as a compact row, not a marquee */
+.ticker {
+  padding: 8pt 0 !important;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.ticker-track {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6pt 18pt !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+.ticker-item {
+  font-size: 9pt !important;
+  padding: 0 !important;
+}
+.ticker-item .num {
+  margin-right: 4pt !important;
+}
+.ticker-arrow { display: none !important; }
+/* Show only the first half — the JS doubles items for the marquee loop */
+.ticker-track > *:nth-child(n+19) { display: none !important; }
+
+/* About */
+.about-grid {
+  grid-template-columns: 1fr 1.4fr !important;
+  gap: 18pt !important;
+}
+.pullquote { font-size: 22pt !important; }
+.about-bio { font-size: 10pt !important; }
+.about-bio p + p { margin-top: 6pt !important; }
+.about-portrait { max-width: 180pt !important; margin-top: 18pt !important; }
+.skill-tag { font-size: 8pt !important; padding: 3pt 6pt !important; }
+.dist-grid { gap: 4pt !important; }
+.dist-chip { padding: 8pt 10pt !important; }
+.dist-label { font-size: 10pt !important; }
+.dist-org { font-size: 8pt !important; }
+.exploring-list li { font-size: 10pt !important; padding: 8pt 0 !important; }
+
+/* Experience — force expanded, no images on print (saves pages) */
+#experience { break-before: page; }
+.exp-list { display: block !important; }
+.exp-row {
+  display: grid !important;
+  grid-template-columns: 110pt 1fr !important;
+  gap: 16pt !important;
+  padding: 12pt 0 !important;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.exp-row .exp-img { display: none !important; }
+.exp-when { font-size: 8pt !important; padding-top: 4pt !important; }
+.exp-body h3 { font-size: 14pt !important; }
+.exp-org { font-size: 8pt !important; margin-bottom: 8pt !important; }
+.exp-body li { font-size: 10pt !important; padding-left: 14pt !important; line-height: 1.4 !important; }
+.exp-body li::before { top: 8pt !important; }
+
+/* Work — force every row's expand panel open */
+#work { break-before: page; }
+.work-row {
+  grid-template-columns: 28pt 1fr 0 0 !important;
+  gap: 12pt !important;
+  padding: 12pt 0 !important;
+  background: transparent !important;
+  break-inside: avoid;
+}
+.work-row::before { display: none !important; }
+.work-row .right-meta { display: none !important; }
+.work-row .arrow { display: none !important; }
+.work-row .index { font-size: 8pt !important; }
+.work-row h3 { font-size: 16pt !important; }
+.work-row .human { font-size: 10pt !important; margin-top: 6pt !important; }
+.work-row .stack span { font-size: 8pt !important; padding: 2pt 5pt !important; }
+.work-row .expand {
+  max-height: none !important;
+  margin-top: 10pt !important;
+  overflow: visible !important;
+}
+.work-row .case {
+  grid-template-columns: 120pt 1fr !important;
+  gap: 12pt !important;
+  padding: 8pt !important;
+  background: rgba(0,0,0,0.02) !important;
+}
+.work-row .case-img { aspect-ratio: 4/3 !important; }
+.work-row .case p { font-size: 9.5pt !important; }
+.work-row .case .links a {
+  font-size: 8pt !important;
+  padding: 4pt 8pt !important;
+}
+
+/* Research */
+#research { break-before: page; }
+.paper {
+  grid-template-columns: 1fr 1.6fr !important;
+  padding: 14pt 0 !important;
+  break-inside: avoid;
+}
+.paper h3 { font-size: 13pt !important; }
+.paper .venue { font-size: 8pt !important; }
+.paper .authors { font-size: 9pt !important; }
+.paper .affil { font-size: 8pt !important; }
+.paper .ptags span { font-size: 8pt !important; padding: 2pt 5pt !important; }
+.paper .abstract { font-size: 10pt !important; }
+.paper .abstract p + p { margin-top: 5pt !important; }
+.paper .plinks a {
+  font-size: 8pt !important;
+  padding: 4pt 8pt !important;
+}
+
+/* Leadership */
+#leadership { break-before: page; }
+.lead-row {
+  grid-template-columns: 90pt 1fr 110pt !important;
+  gap: 14pt !important;
+  padding: 12pt 0 !important;
+  break-inside: avoid;
+}
+.lead-row .when { font-size: 8pt !important; padding-top: 4pt !important; }
+.lead-row h3 { font-size: 13pt !important; }
+.lead-row .org { font-size: 8pt !important; margin-bottom: 8pt !important; }
+.lead-row li { font-size: 10pt !important; padding-left: 14pt !important; line-height: 1.4 !important; }
+.lead-img { aspect-ratio: 3/4 !important; }
+.lead-img--placeholder { display: none !important; }
+.lead-row:not(:has(.lead-img:not(.lead-img--placeholder))) {
+  grid-template-columns: 90pt 1fr !important;
+}
+
+/* Thinking */
+#thinking { break-before: page; }
+.q {
+  padding: 12pt 0 !important;
+  break-inside: avoid;
+}
+.q p { font-size: 16pt !important; }
+.q .seed { font-size: 9.5pt !important; margin-top: 6pt !important; }
+
+/* Life — compact grid */
+#life { break-before: page; }
+.gallery {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8pt !important;
+}
+.gal-item, .gal-item[style*="span 2"] {
+  grid-column: span 1 !important;
+}
+.gal-frame { aspect-ratio: 4/5 !important; }
+.gal-item figcaption { font-size: 8pt !important; margin-top: 4pt !important; }
+
+/* Contact */
+#contact { break-before: page; padding: 18pt 0 !important; }
+.contact h2 { font-size: 38pt !important; }
+.contact .sub { font-size: 12pt !important; margin-top: 14pt !important; }
+.contact-grid {
+  grid-template-columns: 1.4fr 1fr !important;
+  gap: 24pt !important;
+  margin-top: 30pt !important;
+}
+.contact-email { font-size: 16pt !important; }
+.cv-row { margin-top: 20pt !important; }
+.cv-btn { font-size: 9pt !important; padding: 10pt 14pt !important; }
+.academic-note { font-size: 9pt !important; }
+.contact-links a {
+  padding: 8pt 0 !important;
+  font-size: 9pt !important;
+}
+.foot { padding: 14pt 0 !important; font-size: 8pt !important; margin-top: 30pt !important; }
+
+/* Strip reveal-hide so everything renders */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Page break after every major section as a safety net */
+.section { page-break-inside: avoid; }
+
+/* ===========================================================
+   SCREEN PREVIEW — keep print layout visible on screen
+   =========================================================== */
+@media screen {
+  body {
+    background: #f5f5f3;
+  }
+  main {
+    background: #ffffff;
+    max-width: 880px;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 24px;
+  }
+  /* Use the same overrides above on screen too so user sees what they'll get */
+}
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Force the kinetic hero out of its "still animating" state for print -->
+<style>
+  /* Make print-overrides also visible on screen (so user can preview before saving) */
+  #scroll-progress, .nav, .cursor-dot, .cursor-ring, .ambient-light, .grain, .scroll-hint, .pdf-modal {
+    display: none !important;
+  }
+  .reveal, .hero-fade, .hero-word, .first-inner {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .work-row .expand {
+    max-height: none !important;
+    margin-top: 24px !important;
+  }
+</style>
+
+<script type="text/babel" src="portfolio.jsx"></script>
+
+<script type="text/babel">
+(async () => {
+  // Wait for React tree to render
+  const waitForRoot = () => new Promise((resolve) => {
+    const check = () => {
+      if (document.querySelector('main') && document.querySelector('.hero-name .last')) resolve();
+      else requestAnimationFrame(check);
+    };
+    check();
+  });
+  await waitForRoot();
+
+  // Force ONGERI letters to their final glyphs (in case scramble RAF hasn't finished)
+  const TARGET = 'ONGERI';
+  document.querySelectorAll('.ong-letter').forEach((s, i) => {
+    s.textContent = TARGET[i];
+  });
+
+  // Wait for fonts
+  if (document.fonts && document.fonts.ready) {
+    try { await document.fonts.ready; } catch {}
+  }
+
+  // Wait for images
+  const imgs = [...document.images];
+  await Promise.all(imgs.map(img => img.complete ? Promise.resolve() : new Promise(r => {
+    img.addEventListener('load', r, { once: true });
+    img.addEventListener('error', r, { once: true });
+  })));
+
+  // Final settle
+  await new Promise(r => setTimeout(r, 600));
+  window.print();
+})();
+</script>
+</body>
+</html>

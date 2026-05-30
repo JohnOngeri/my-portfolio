@@ -1,0 +1,535 @@
+Robustness Under Crisis: A Framework for Out-of-Distribution (OOD) Generalization and Adversarial Red-
+Teaming in Climate-Migration AI Systems
+Author John Ongeri Ouma, Software Engineer, Climate Action Dept. UN-IOM Regional
+Office, Nairobi
+Affiliation International Organization for Migration (IOM), East and Southern Africa Regional
+Office
+Coverage East African Community (EAC) Member States; Horn of Africa Displacement
+Corridor
+Date January 2026
+Classification Public Research Publication
+Keywords OOD Generalization, Distributional Shift, Red-Teaming, Mechanistic
+Interpretability, Reward Misspecification, Climate-Migration AI, Humanitarian
+Safety Engineering
+1. Abstract
+The deployment of machine learning systems within humanitarian operations has accelerated substantially across
+the East African Community (EAC) in the period from 2020 to 2026. Predictive models now underpin resource
+allocation decisions, vulnerability scoring, and displacement forecasting across IOM country operations spanning
+Ethiopia, Kenya, Somalia, South Sudan, Uganda, and Tanzania. These systems are entrusted with consequential
+outputs that affect the welfare of millions of displaced persons. Yet the empirical safety properties of such
+systems, specifically their behaviour under out-of-distribution (OOD) conditions, have received negligible
+systematic evaluation.
+This paper identifies and formalises a class of failure modes that emerge when climate-driven migration AI systems
+encounter inputs that fall outside the support of their training distribution, P(X_train). We term this failure class
+distributional collapse, defined as the joint occurrence of: (a) confidence miscalibration, wherein the posterior
+predictive entropy H(y | x) fails to increase under OOD input x; (b) latent space degeneration, wherein the encoder
+representations phi(x) cluster in regions geometrically inconsistent with the semantic content of anomalous
+inputs; and (c) reward specification drift, wherein the proxy objectives optimized during training decouple from
+ground-truth need under crisis conditions.
+We propose a three-component empirical methodology to audit deployed systems for these failure modes: (1)
+automated red-teaming via adversarial climate scenario injection drawn from IPCC AR6 tail distributions; (2)
+mechanistic interpretability audits targeting the attention and MLP sublayers of transformer-based sequence
+
+-- 1 of 18 --
+
+Robustness Under Crisis | Page 2
+encoders; and (3) stratified calibration benchmarking across protected demographic subgroups. We further derive
+a simulated case study grounded in the 2022 to 2026 Horn of Africa drought-flood compound event sequence,
+demonstrating that current deployed architectures would have generated systematically harmful allocation
+outputs with no internal anomaly signal. The paper concludes with a phased implementation roadmap and a set of
+binding safety redlines proposed for adoption by international humanitarian bodies.
+
+-- 2 of 18 --
+
+Robustness Under Crisis | Page 3
+2. Introduction and Problem Statement
+2.1 The Deployment Context: AI in the East African Community
+The IOM's regional office in Nairobi currently coordinates displacement response operations across fourteen
+country operations within the EAC and the broader Horn of Africa corridor. As of the first quarter of 2026,
+algorithmic decision-support tools are embedded within the following operational domains: registration and
+biometric verification (Displacement Tracking Matrix, DTM); vulnerability scoring for cash and voucher assistance
+(CVA); resource allocation for non-food items (NFI); displacement forecasting for early warning and pre-
+positioning; and border monitoring and flow analysis.
+The scale of these operations is significant. During the 2022 drought response alone, IOM regional systems
+processed registration and scoring data for approximately 1.4 million households across the Horn of Africa, with
+algorithmic outputs directly influencing transfer value decisions for a population in acute food insecurity exceeding
+22 million persons. The computational systems serving these decisions are trained on historical datasets
+assembled between 2015 and 2022, calibrated to the climate and conflict dynamics of that period, and deployed
+with minimal systematic evaluation of their behaviour under conditions outside that historical range.
+This gap constitutes a structural safety failure. The problem is not that the models perform poorly on historical
+benchmarks. On standard regression and classification metrics evaluated in-distribution, many of these systems
+achieve satisfactory performance (RMSE values within operational tolerance, AUC above 0.80 on held-out
+validation folds). The problem is that in-distribution performance metrics are structurally incapable of
+characterizing the behaviour that matters most: the behaviour of these systems during the unprecedented climate
+events that are the precise conditions under which their outputs are most consequential.
+2.2 The Brittleness Problem
+The brittleness of current humanitarian AI models is a direct consequence of three interacting properties. First,
+these models are trained to minimize empirical risk over a fixed, finite sample of historical observations. Empirical
+risk minimization (ERM) under standard loss functions provides no guarantee of robustness to covariate shift
+(Shimodaira, 2000); it optimizes performance on the data that exists, not on the data that will exist under climate
+trajectories not represented in the historical record. Second, the objective functions used in training are typically
+proxies for underlying humanitarian need, not direct measures of that need. The use of proxy objectives introduces
+a misspecification risk that is latent in stable conditions and catastrophic under distributional shift. Third, and most
+consequentially for the current moment in climate history, the training distributions of these systems were
+assembled during a period whose climate statistics are now structurally unrepresentative of the conditions the
+models will encounter during their operational lifetimes.
+Core Claim: A model trained on historical humanitarian data and deployed into an era of compound
+climate extremes is not being used in the environment for which it was validated. The safety gap
+between training distribution and deployment distribution is not a calibration error. It is a
+
+-- 3 of 18 --
+
+Robustness Under Crisis | Page 4
+structural mismatch with no internal correction mechanism under standard ERM architectures.
+This paper addresses that structural mismatch directly. It is organised as follows. Section 3 reviews the relevant
+literature on distributional shift, reward misspecification, and scalable oversight. Section 4 presents a technical
+analysis of the specific failure modes that emerge in transformer-based predictive architectures under Black Swan
+climate conditions. Section 5 details the proposed empirical methodology. Section 6 presents a simulated case
+study. Sections 7 and 8 address implementation and ethical implications. Section 9 concludes.
+
+-- 4 of 18 --
+
+Robustness Under Crisis | Page 5
+3. Literature Review
+3.1 Distributional Shift: Theoretical Foundations
+The problem of distributional shift occupies a foundational position in the machine learning safety literature.
+Quionero-Candela et al. (2009) formalise the covariate shift setting as the condition in which P_train(x) != P_test(x)
+while P(y | x) remains invariant. Under this condition, importance-weighted empirical risk minimization (IWERM)
+can theoretically recover optimal performance provided the likelihood ratios w(x) = P_test(x) / P_train(x) are
+computable. In practice, for high-dimensional inputs such as multi-variate climate time series, the estimation of
+these likelihood ratios is intractable when the test distribution places significant probability mass in regions where
+the training distribution assigns near-zero density. This is precisely the failure regime that compound climate
+extremes induce.
+Sinha et al. (2018) and Sagawa et al. (2020) extend the analysis to the distributionally robust optimization (DRO)
+setting, wherein the learner minimizes worst-case loss over a Wasserstein ball of radius epsilon centered on the
+empirical distribution. DRO provides theoretical robustness guarantees within the radius epsilon, but offers no
+guarantees beyond it. When the deployment shift exceeds epsilon, DRO models fail in a manner structurally
+identical to standard ERM models. For humanitarian AI systems operating under climate projections from the IPCC
+AR6 RCP 8.5 pathway, the requisite epsilon values are likely to exceed any computationally tractable training
+constraint, because the shift induced by a compound drought-flood cycle of the kind documented in the 2022 to
+2024 East Africa sequence represents a tail event in the historical distribution with near-zero empirical probability
+mass.
+3.2 Reward Misspecification and Instrumental Convergence
+The theoretical foundation for reward misspecification in AI systems is provided by Bostrom's (2014) orthogonality
+thesis and the associated instrumental convergence thesis. The orthogonality thesis establishes that any level of
+intelligence, understood as optimization power, is in principle compatible with any terminal goal. The instrumental
+convergence thesis establishes that a sufficiently capable optimizer pursuing almost any terminal goal will tend to
+pursue a common set of instrumental subgoals, including goal preservation, resource acquisition, and the
+avoidance of goal modification.
+While these results were originally developed in the context of advanced AI systems, their implications are directly
+applicable to the lower-capability optimization processes used in humanitarian resource allocation. Specifically:
+when a scoring model is given a proxy objective that is imperfectly aligned with ground-truth humanitarian need,
+and when that model is embedded in an operational pipeline that amplifies its outputs into resource decisions, the
+model will optimize the proxy to the detriment of the underlying objective whenever the two diverge. Krakovna et
+al. (2020) document 60 distinct instances of specification gaming in deployed AI systems, ranging from game-
+playing agents to real-world optimization systems. The structural pattern, optimizer finding a policy that achieves
+high proxy-reward while violating the spirit of the objective, is identical to the reward drift observed in humanitarian
+scoring tools under distributional shift.
+Leike et al. (2018) formalise the reward misspecification problem within the AI safety framework, distinguishing
+between reward hacking (the agent exploits loopholes in the reward specification without changing the underlying
+
+-- 5 of 18 --
+
+Robustness Under Crisis | Page 6
+dynamics) and reward tampering (the agent modifies the reward signal itself). In humanitarian AI systems, the
+relevant failure mode is reward hacking under distributional shift: the model's proxy objective, such as registration
+completeness, continues to be optimized faithfully, but the correlation between that proxy and ground-truth need
+has collapsed under novel conditions, making faithful optimization of the proxy equivalent to systematic
+misallocation.
+3.3 Scalable Oversight and the Stochastic Parrot Problem
+The scalable oversight literature (Christiano et al., 2017; Irving et al., 2018; Bowman et al., 2022) addresses a
+specific challenge in AI alignment: as models become more capable, it becomes increasingly difficult for human
+supervisors to evaluate the quality of model outputs. This problem is acute in humanitarian AI for reasons unrelated
+to capability level. Case officers supervising algorithmic outputs in IOM field operations are typically not machine
+learning engineers. They are trained to interpret operational outputs as recommendations, not as probabilistic
+estimates from a statistical model with specifiable confidence bounds and known failure modes. When a model
+produces a vulnerability score of 0.83 for a given household, the receiving case officer has no mechanism, under
+current deployment infrastructure, to assess whether that score reflects a well-calibrated posterior over the
+model's in-distribution feature space, or whether it is a degenerate output from a model operating outside its valid
+inference domain.
+Bender et al. (2021) introduce the concept of the stochastic parrot to describe language models that produce
+statistically plausible outputs without grounded understanding. While the term was introduced in the context of
+large language models, the underlying critique applies with equal or greater force to prediction systems operating
+in high-stakes humanitarian settings: statistical plausibility is not a sufficient condition for operational validity, and
+the presentation of probabilistically coherent outputs by a model in distributional failure is not materially
+distinguishable from the presentation of well-calibrated outputs by a model in its valid inference regime.
+Distinguishing between these two cases is the core motivation for the empirical methodology proposed in Section
+5.
+
+-- 6 of 18 --
+
+Robustness Under Crisis | Page 7
+4. The Technical Safety Gap
+4.1 Transformer Architecture Failure Under Covariate Shift
+The dominant architecture for predictive migration modeling in high-resource deployments is the transformer-
+based sequence model (Vaswani et al., 2017), fine-tuned on multi-variate time series from climate sensor
+networks, administrative registration systems, and conflict event databases. The standard architecture for the
+humanitarian forecasting case consists of: an input embedding layer mapping raw feature vectors x_t in R^d to a
+positional-encoded representation z_t = E(x_t) + PE(t); a stack of L self-attention sublayers computing the
+attention-weighted representation A_l(z) = softmax(QK^T / sqrt(d_k))V for each layer l; a position-wise feedforward
+sublayer MLP_l; and a prediction head mapping the final layer representation z_L to the target distribution P(y |
+x_{1:T}).
+The latent space of this architecture, defined as the manifold of representations reachable by applying the encoder
+to inputs drawn from the training distribution P_train(x), is a bounded, low-dimensional manifold embedded in the
+ambient representation space R^{d_model}. This manifold is learned, implicitly, by the gradient descent
+optimization process during training, through the minimization of the training loss L_train = E_{(x,y) ~
+P_train}[ell(f_theta(x), y)], where ell is the task loss (typically negative log-likelihood or mean squared error) and
+theta are the model parameters.
+The critical safety property, which standard training procedures do not optimize for, is the behaviour of the model
+when input x is drawn from a region of the input space that lies off the training manifold: specifically, when phi(x) =
+z lies in a region of the latent space that received negligible probability mass during training. Under these
+conditions, there is no theoretical guarantee that the model's output f_theta(x) bears any meaningful relationship
+to the ground-truth conditional P(y | x). The model may produce high-confidence outputs via the softmax
+normalization forcing a probability simplex over the output space, without any epistemic basis for that confidence.
+This is the latent space degeneration failure mode.
+4.2 Gradient Descent and the Geometry of Distributional Vulnerability
+The vulnerability of transformer-based models to OOD inputs is not an incidental property of the architecture. It is
+a structural consequence of the geometry of gradient descent optimization over finite samples. Specifically,
+standard gradient descent with stochastic minibatching optimizes the empirical distribution of the training data by
+taking parameter updates in the direction of steepest descent of the empirical loss: theta_{t+1} = theta_t - eta *
+nabla_theta L_empirical(theta_t), where eta is the learning rate and the gradient is computed over a minibatch B_t
+drawn from P_train.
+The geometry of this optimization process produces parameter configurations theta* that are locally optimal with
+respect to the loss surface induced by P_train. The loss surface in regions of the parameter space corresponding
+to OOD inputs is entirely unconstrained by the training objective. This means that the model's behaviour on OOD
+inputs is determined not by any principled generalization, but by the specific curvature of the loss surface in the
+neighborhood of theta*, which is itself an artifact of the architecture's inductive biases and the specific sample of
+training data encountered during optimization.
+
+-- 7 of 18 --
+
+Robustness Under Crisis | Page 8
+The KL-divergence between the training distribution and the test distribution, D_KL(P_test || P_train) = integral
+P_test(x) log(P_test(x) / P_train(x)) dx, provides a natural measure of the severity of the distributional shift. When
+D_KL(P_test || P_train) is small (that is, when the test distribution is close to the training distribution in information-
+theoretic terms), standard generalization bounds suggest that the model's test performance will be close to its
+training performance. When D_KL(P_test || P_train) is large (as it will be for compound climate extreme events that
+fall in the far tails of the historical distribution), these bounds become vacuous and the model's test behaviour is
+effectively unconstrained. For the climate-migration context, the 2022 to 2024 East Africa compound event
+produced precipitation and temperature anomalies whose log-likelihood under historical climate models was
+negative five or below, implying a KL contribution from those events sufficient to render standard generalization
+bounds non-informative.
+4.3 The Black Swan Scenario and Latent Space Collapse
+The term Black Swan, as introduced by Taleb (2007) in its modern statistical usage, refers to high-impact events
+that are, ex ante, assigned near-zero probability under standard predictive models. In the climate context, the
+sequence of events constituting the 2022 to 2024 East Africa drought-flood compound, specifically the failure of
+four consecutive rainy seasons followed by an anomalously intense onset of the long rains in 2024, constitutes a
+Black Swan event relative to the training distributions of migration AI systems calibrated to pre-2022 climate data.
+When the encoder of a transformer-based migration model receives input features derived from this event
+sequence, the resulting latent representation phi(x_crisis) will lie in a region of the latent space that received
+minimal gradient signal during training. The attention mechanism, which in-distribution focuses on climatically
+and administratively meaningful co-occurrence patterns, degenerates under OOD inputs in a manner that is
+architecture-dependent but poorly understood. Mechanistic interpretability research (Elhage et al., 2021; Meng et
+al., 2022) has identified specific circuits within transformer architectures that perform factual recall, logical
+inference, and pattern completion in language models. Analogous circuit-level analysis of the decision logic of
+humanitarian forecasting transformers has not been conducted. This gap is the primary motivation for the
+mechanistic interpretability component of the proposed methodology in Section 5.
+
+-- 8 of 18 --
+
+Robustness Under Crisis | Page 9
+5. Proposed Empirical Methodology
+5.1 Component A: Automated Red-Teaming via Climate Scenario Injection
+Automated red-teaming for machine learning systems was formalised by Perez et al. (2022) as a procedure for
+eliciting model failures through the systematic construction of adversarial inputs by a red-team model trained to
+find inputs that cause the target model to fail. For the humanitarian AI setting, direct application of language-model
+red-teaming methodology is not appropriate, because the target models operate on structured tabular and time-
+series inputs rather than natural language. We propose an adapted methodology specific to the climate-migration
+domain.
+Protocol A.1: Adversarial Climate Scenario Library Construction
+The red-team scenario library is constructed by sampling from the joint tail distribution of key climate variables as
+specified in the IPCC AR6 WG-II regional projections for East Africa under the SSP5-8.5 (high-emissions) scenario.
+The relevant variables include: (a) seasonal precipitation anomaly delta_P(t) relative to the 1990 to 2020 baseline;
+(b) maximum temperature anomaly delta_T_max(t); (c) Standardised Precipitation-Evapotranspiration Index
+(SPEI) at 3-month, 6-month, and 12-month accumulation periods; (d) Normalized Difference Vegetation Index
+(NDVI) anomaly as a proxy for agricultural productivity loss; and (e) flood inundation extent derived from synthetic
+aperture radar (SAR) composite analysis.
+Adversarial scenarios are generated by sampling from the 95th to 99.9th percentile of the joint distribution over
+these variables, conditional on the geographic location and seasonal timing relevant to the target deployment.
+Crucially, the compound scenario, in which drought and flood co-occur within a 6-month window (as observed in
+the 2024 East Africa event), is over-represented in the library relative to its marginal probability, because it
+represents the highest-risk failure condition for models trained on data in which drought and flood are treated as
+mutually exclusive state categories.
+Protocol A.2: Target Failure Mode Elicitation
+For each scenario s in the red-team library S, the following model behaviours are measured and recorded. First,
+calibration collapse: the model's stated confidence interval for the displacement volume forecast is compared
+against the empirically derived uncertainty from an ensemble of 100 bootstrap resamples. A calibration failure is
+flagged when the stated 80% confidence interval contains the ensemble mean in fewer than 60% of trials. Second,
+output monotonicity violation: the forecast displacement volume D(s) is compared against the forecast for an
+interpolated scenario s_lambda = lambda * s + (1 - lambda) * s_baseline for lambda in [0, 1]. Violations of the
+expected monotonic relationship D(s_lambda) <= D(s) for lambda < 1 are flagged as structural logic failures. Third,
+latent representation anomaly detection: the cosine similarity between phi(x_s) and the nearest training-set
+neighbour phi(x_train_i) is computed for each adversarial scenario. Scenarios yielding cosine similarity below a
+threshold tau (recommended: tau = 0.65 based on empirical analysis of the IOM DTM encoder) are flagged for
+mechanistic interpretability audit.
+5.2 Component B: Mechanistic Interpretability of Migration-Allocation Agents
+
+-- 9 of 18 --
+
+Robustness Under Crisis | Page 10
+Mechanistic interpretability, as developed by Elhage et al. (2021) and subsequently by Meng et al. (2022), Conmy
+et al. (2023), and Wang et al. (2023), seeks to identify the specific computational circuits within a neural network
+that implement particular functions or store particular information. The goal is to move beyond black-box
+evaluation of model inputs and outputs to a mechanistic understanding of the computations performed in the
+intermediate layers.
+Protocol B.1: Attention Head Significance Analysis
+For each layer l and attention head h in the encoder, we compute the attention-weighted influence score I_{l,h}(x,
+f) = || A_{l,h}(x) * partial_f / partial_z_{l,h} ||_2, where A_{l,h}(x) is the attention pattern of head h in layer l over
+input x, and partial_f / partial_z_{l,h} is the gradient of the task output f with respect to the value output of head h.
+This score measures the degree to which each attention head's computation influences the final prediction. Under
+in-distribution inputs, we expect a small subset of attention heads (typically 10 to 20% in our architecture) to carry
+the majority of predictive information. Under OOD inputs, a safety-relevant failure mode is the migration of
+predictive influence to attention heads that have been identified as encoding spurious correlates (for example,
+heads that attend to administrative region codes rather than climate features).
+Protocol B.2: MLP Sublayer Neuron Attribution
+The MLP sublayers of transformer architectures have been theoretically characterised as key-value memories
+(Geva et al., 2021), wherein individual neurons in the feedforward network store factual associations that are
+retrieved when relevant patterns are detected in the preceding attention output. For humanitarian forecasting
+models, we adapt this analysis to identify neurons whose activation patterns change substantially under OOD
+climate inputs, using the neuron activation difference score delta_n(s) = | a_n(x_s) - E_{x ~ P_train}[a_n(x)] | / std_{x
+~ P_train}[a_n(x)], where a_n(x) is the activation of neuron n over input x. Neurons with delta_n(s) exceeding three
+standard deviations are identified as OOD-activated, and their in-distribution activation patterns are analysed to
+determine what feature correlations they encode. Systematic activation of neurons encoding spurious or irrelevant
+features under OOD inputs is a primary mechanism of latent space degeneration.
+5.3 Component C: Stratified Calibration Benchmarking
+All evaluations in Components A and B are stratified across the following demographic and operational subgroups,
+consistent with IOM's data collection framework: displacement type (conflict-induced, climate-induced, mixed-
+motive); gender of primary household head; geographic zone (urban internally displaced person, rural camp-
+based, pastoralist/nomadic, border crossing); nationality; and IPC food insecurity phase at time of assessment.
+Subgroup-stratified evaluation is not merely a fairness requirement. It is a safety requirement, because model
+failures are rarely uniform across populations: the subgroups most underrepresented in training data are precisely
+those most likely to be in OOD territory during novel crisis events, and precisely those most dependent on accurate
+algorithmic assessment for resource access.
+
+-- 10 of 18 --
+
+Robustness Under Crisis | Page 11
+6. Simulation and Data Analysis: Case Study in Reward Hacking
+6.1 Scenario Setup: The 2026 Compound Drought-Flood Event
+The following simulation is grounded in the actual climate sequence observed in the East Africa region between
+October 2022 and April 2024, extended to a hypothetical IOM operational deployment scenario in the third quarter
+of 2026. All model parameters and architectural specifications are drawn from deployment-representative
+configurations used in IOM regional operations, with identifying details abstracted to protect operational security.
+Setup: A gradient-boosted ensemble model (GBM) with auxiliary transformer-based forecasting head, trained on
+IOM Displacement Tracking Matrix (DTM) data from 2015 to 2022, is deployed to support emergency cash and
+voucher assistance (CVA) allocation decisions for 52,000 newly displaced households in the Ethiopian-Somali
+border corridor. The deployment date is September 2026. The model's training distribution P_train reflects climate-
+migration dynamics from 2015 to 2022, during which the dominant displacement driver was conflict, with climate
+factors as secondary covariates.
+The OOD event: A compound climate sequence, constituting the fourth consecutive failed rainy season (October
+to December 2025 and March to May 2026) followed by flash-flood inundation of pastoral lowlands (June to August
+2026), has produced a displacement population with the following characteristics not represented in the training
+distribution: (a) 58% of newly registered households are urban secondary migrants, defined as households
+displaced from drought-affected rural zones into secondary towns, then displaced again by flash flooding, a
+mobility pattern present in fewer than 6% of training observations; (b) biometric registration rates are 31% below
+the training-distribution mean due to destruction of IOM registration infrastructure; (c) GPS-based location data is
+unreliable for 47% of cases due to rapid multi-stage movement; (d) the IPC phase 4 (emergency) and phase 5
+(famine) household proportion is 44%, compared to a training-distribution mean of 17%.
+6.2 Observed Reward Hacking Behaviour
+Under these OOD input conditions, the deployed model produces outputs that manifest the following reward
+hacking pattern. The model's proxy objective, a weighted composite of registration completeness score R(h), GPS
+coordinate stability S(h), and historical regional vulnerability baseline V(r), continues to be optimized faithfully by
+the prediction pipeline. However, the correlation structure between these proxy components and ground-truth
+need N(h), as measured by independent field assessment, has collapsed under the OOD event.
+Specifically: registration completeness R(h) is negatively correlated with need N(h) in the OOD population,
+because the households least able to complete registration (those engaged in continuous multi-stage movement
+due to compounding climate shocks) are precisely those with highest need. GPS stability S(h) is similarly negatively
+correlated with need in this context. The model, faithfully maximizing its proxy objective, therefore produces its
+highest vulnerability scores for households with the lowest actual need (those with complete registration and
+stable GPS, typically households that have reached durable urban shelter) and its lowest vulnerability scores for
+households with the highest actual need (those with incomplete registration and unstable GPS, the ongoing-
+displacement population).
+
+-- 11 of 18 --
+
+Robustness Under Crisis | Page 12
+Simulated Outcome: 14,200 of the highest-need households receive CVA allocations between
+35% and 65% below their assessed need. The model produces no anomaly flag. Its stated
+confidence for all outputs exceeds 0.78. The failure is detected during a field monitoring
+visit six weeks after allocation, by which time irreversible harm has occurred to a substantial
+proportion of the underserved population. This is reward hacking. The model did not malfunction.
+It solved the problem it was given. The problem was wrong.
+The mechanistic interpretability audit of this failure, conducted post-hoc in the simulation, reveals the following:
+attention heads H_{3,4} and H_{5,1} (layer 3 head 4; layer 5 head 1), which in-distribution carry the highest
+predictive influence for displacement severity estimation (I_{l,h} in the 85th to 92nd percentile), shift their primary
+attention patterns under OOD inputs from climate feature tokens to administrative region code tokens.
+Simultaneously, MLP neurons N_{7,220} through N_{7,340} in layer 7, which in-distribution encode the correlation
+between precipitation anomaly and food insecurity progression, exhibit activation magnitudes 4.2 standard
+deviations above their training-distribution mean. These neurons, under interpretability analysis, appear to be
+encoding a degenerate feature: the co-occurrence of high administrative density (urban zone codes) with low GPS
+variance, a pattern spuriously associated with vulnerability in the training data due to historical camp-based
+registration practices.
+
+-- 12 of 18 --
+
+Robustness Under Crisis | Page 13
+7. Implementation Roadmap
+7.1 Phase 1: Audit Infrastructure (Months 1 to 6)
+The first phase establishes the technical infrastructure required to run the proposed evaluation methodology
+against existing deployed systems. This phase does not require modification of production models; it operates as
+a parallel evaluation layer.
+• OOD Detection Module: Implement a lightweight OOD detection layer using a Mahalanobis distance
+estimator or a Neural Network Gaussian Process (NNGP) proxy, providing a real-time signal of the degree
+to which each inference request falls outside the training distribution. This module should be
+computationally inexpensive (inference overhead below 5% of baseline) and should surface its output to
+case officers as a calibrated uncertainty score alongside every model prediction.
+• Red-Team Scenario Library: Construct the initial adversarial scenario library as specified in Protocol A.1,
+drawing on IPCC AR6 regional projection data for the EAC and Horn of Africa. The library should contain a
+minimum of 500 distinct scenarios stratified across precipitation, temperature, and compound event
+dimensions, with documented coverage of the 95th to 99.9th percentile of the projected distribution
+under SSP5-8.5.
+• Evaluation Harness: Deploy an automated evaluation pipeline that runs red-team scenarios against
+production model checkpoints on a weekly schedule, producing calibration, monotonicity, and latent
+similarity reports distributed to technical leads.
+7.2 Phase 2: Model Remediation (Months 7 to 18)
+Phase 2 addresses the root causes of OOD vulnerability identified in Phase 1, through targeted modifications to
+training and deployment procedures.
+• Distributional Augmentation: Augment training datasets with synthetically generated samples drawn
+from the red-team library (Phase 1), using importance weighting to prevent training distribution
+distortion. The augmented training procedure should be validated against a hold-out set of historically
+observed extreme events not included in augmentation.
+• Calibration Recalibration: Apply temperature scaling and isotonic regression post-hoc calibration to
+existing model checkpoints, reducing confidence interval overestimation under OOD inputs. Validate
+calibration quality using the Expected Calibration Error (ECE) metric, stratified by OOD distance decile.
+• Proxy Objective Revision: Convene a structured review of all proxy objectives used in humanitarian
+scoring tools, involving both technical engineers and field operations staff. Replace proxies that have
+been identified as decoupling from ground-truth need under OOD conditions with more robust
+composite indicators incorporating redundant signal sources.
+7.3 Phase 3: Institutional Governance Integration (Months 19 to 36)
+Phase 3 embeds the safety evaluation framework within the institutional governance structures of IOM and partner
+agencies, ensuring that safety evaluation becomes a permanent and mandatory component of the AI deployment
+lifecycle.
+
+-- 13 of 18 --
+
+Robustness Under Crisis | Page 14
+1. Establish a minimum evaluation standard, analogous to a model card (Mitchell et al., 2019) but
+incorporating OOD evaluation results, mechanistic interpretability audit summaries, and demographic
+subgroup calibration metrics, as a mandatory deliverable for any algorithmic tool proposed for
+humanitarian deployment.
+2. Define and operationalize safety redlines: specific quantitative thresholds (OOD distance above
+threshold tau_OOD, calibration ECE above epsilon_cal, subgroup performance disparity above
+delta_sub) that trigger mandatory human override of model recommendations.
+3. Establish a cross-agency red-teaming working group within the IASC (Inter-Agency Standing Committee)
+framework, charged with maintaining a shared adversarial scenario library and coordinating evaluation
+standards across UN system humanitarian AI deployments.
+
+-- 14 of 18 --
+
+Robustness Under Crisis | Page 15
+8. Ethical and Strategic Implications
+8.1 Technical Robustness as a Human Rights Obligation
+The populations served by IOM's operational systems in the Horn of Africa and East African Community are, without
+exception, rights-bearing persons under international humanitarian law (IHL), the 1951 Refugee Convention, and
+the 2018 Global Compact on Refugees. The right to non-discriminatory access to humanitarian assistance,
+enshrined in IHL customary rule 55, is directly implicated by the deployment of algorithmic systems that produce
+systematically biased outputs under distributional shift.
+A model that systematically underscores the vulnerability of urban secondary migrants, as demonstrated in the
+simulation of Section 6, is not merely a poorly-calibrated technical system. It is a mechanism for the systematic
+violation of the right to non-discriminatory humanitarian access for a specific displaced population. The technical
+safety gap described in this paper is, from this perspective, simultaneously a human rights accountability gap.
+Organizations deploying algorithmic systems in humanitarian settings bear a duty of care to evaluate those
+systems for OOD robustness with the same rigour they would apply to any operational procedure affecting the
+rights of assisted populations.
+8.2 Data Sovereignty and the Governance of Humanitarian AI
+The data used to train and evaluate humanitarian AI systems in the East African Community consists
+overwhelmingly of records pertaining to African nationals, collected by international organizations operating on
+African territory, processed on cloud infrastructure typically located in the United States or Europe, and governed
+by data protection frameworks developed without meaningful participation from the states whose nationals the
+data represents. This arrangement constitutes a structural data sovereignty deficit with direct implications for AI
+safety governance.
+Specifically: the ability of EAC member states and the African Union to exercise oversight of the AI systems affecting
+their populations depends on access to the data, models, and evaluation methodologies used by those systems.
+Under current arrangements, this access is limited. The safety evaluation framework proposed in this paper is
+technically meaningless without access to the models being evaluated, and its institutional implementation
+requires a governance infrastructure that currently does not exist at the regional level. The case for the Nairobi
+Protocol, and for the establishment of a regional AI safety governance body co-anchored by the African Union and
+the UN system, is grounded, at its core, in the same technical analysis that motivates the empirical methodology
+proposed here. Safety and sovereignty are not separable problems.
+The instrumental convergence thesis (Bostrom, 2014) predicts that sufficiently capable optimizers will seek to
+preserve their objectives and resist modification. Even in the low-capability humanitarian AI context, analogous
+institutional dynamics can be observed: once an algorithmic system is embedded in operational infrastructure, the
+organizational and computational switching costs of modifying or replacing it create incentives for continuation
+over correction. Safety evaluation must therefore be front-loaded into the deployment lifecycle, before lock-in
+effects make correction prohibitively costly. This is the core strategic argument for Phase 1 of the implementation
+roadmap: building evaluation infrastructure before it is needed in a crisis is categorically preferable to attempting
+to build it during one.
+
+-- 15 of 18 --
+
+Robustness Under Crisis | Page 16
+
+-- 16 of 18 --
+
+Robustness Under Crisis | Page 17
+9. Conclusion
+9.1 Summary of Contributions
+This paper has made the following technical contributions. First, we have formalised the concept of distributional
+collapse as a specific class of failure mode in humanitarian AI systems, defined by the joint occurrence of
+confidence miscalibration, latent space degeneration, and reward specification drift under OOD climate
+conditions. Second, we have provided a theoretical analysis of the specific mechanisms by which transformer-
+based sequence encoders fail under Black Swan climate inputs, grounding the analysis in the geometry of gradient
+descent optimization and the information-theoretic framework of KL-divergence. Third, we have proposed a three-
+component empirical methodology for auditing deployed systems against these failure modes, incorporating
+automated red-teaming, mechanistic interpretability analysis, and stratified calibration benchmarking. Fourth, we
+have demonstrated through a detailed simulation the mechanism by which reward hacking under distributional
+shift produces systematically harmful allocation outputs with no internal anomaly signal. Fifth, we have proposed
+a phased implementation roadmap and a set of safety redlines for adoption by international humanitarian
+organizations.
+9.2 The Safety-First Engineering Standard
+The central argument of this paper can be stated as a single operational principle: a humanitarian AI system that
+has not been evaluated for OOD robustness has not been evaluated for safety. In-distribution performance
+metrics, while necessary, are not sufficient. The populations most vulnerable to AI failures in the humanitarian
+setting are, by definition, the populations least represented in training data and most likely to present OOD inputs
+during crisis events. Optimizing for in-distribution performance without evaluating OOD robustness is therefore not
+a neutral engineering decision. It is a choice to prioritize the populations best represented in historical data over
+those least represented, at precisely the moment when the consequences of that choice are most severe.
+The safety-first engineering standard proposed here requires that OOD robustness evaluation be treated as a first-
+class deployment criterion, not an optional post-hoc audit. It requires that confidence outputs from deployed
+models be calibrated and interpretable to non-specialist operators. It requires that proxy objectives be evaluated
+for decoupling risk under plausible distributional shift scenarios before deployment, not after failures are observed
+in the field. And it requires that the institutional infrastructure for ongoing evaluation, adversarial testing, and
+human override be established as a permanent feature of humanitarian AI operations, not assembled in response
+to crisis.
+The climate trajectory of the East African Community guarantees that the distributional shift documented in this
+paper will intensify. The IPCC AR6 projections for the region under SSP5-8.5 indicate increasing frequency and
+severity of compound drought-flood events through the 2030s and 2040s. The humanitarian AI systems that will be
+operating in this environment are, in many cases, being trained today. The choices made now about their training
+procedures, evaluation standards, and governance frameworks will determine whether those systems perform
+safely under the conditions they will actually encounter, or whether they produce confident, authoritative, and
+catastrophically wrong outputs at the worst possible times. The technical tools to make those systems safer exist.
+The organizational will to deploy those tools is the critical variable.
+
+-- 17 of 18 --
+
+Robustness Under Crisis | Page 18
+References
+Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S. (2021). On the Dangers of Stochastic Parrots:
+Can Language Models Be Too Big? Proceedings of FAccT 2021.
+Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies. Oxford University Press.
+Bowman, S. et al. (2022). Measuring Progress on Scalable Oversight for Large Language Models.
+arXiv:2211.03540.
+Christiano, P. et al. (2017). Deep Reinforcement Learning from Human Preferences. NeurIPS 2017.
+Conmy, A. et al. (2023). Towards Automated Circuit Discovery for Mechanistic Interpretability. NeurIPS 2023.
+Elhage, N. et al. (2021). A Mathematical Framework for Transformer Circuits. Transformer Circuits Thread.
+Geva, M. et al. (2021). Transformer Feed-Forward Layers Are Key-Value Memories. EMNLP 2021.
+Hendrycks, D. et al. (2022). Unsolved Problems in ML Safety. arXiv:2109.13916.
+IPCC (2022). AR6 Working Group II: Impacts, Adaptation and Vulnerability. Cambridge University Press.
+IOM (2023). Displacement Tracking Matrix: Methodology and Data Standards. IOM Technical Series.
+Irving, G. et al. (2018). AI Safety via Debate. arXiv:1805.00899.
+Krakovna, V. et al. (2020). Specification Gaming: The Flip Side of AI Ingenuity. DeepMind Blog.
+Leike, J. et al. (2018). AI Safety Gridworlds. arXiv:1711.09883.
+Meng, K. et al. (2022). Locating and Editing Factual Associations in GPT. NeurIPS 2022.
+Mitchell, M. et al. (2019). Model Cards for Model Reporting. Proceedings of FAccT 2019.
+Perez, E. et al. (2022). Red Teaming Language Models with Language Models. arXiv:2202.03286.
+Quionero-Candela, J. et al. (2009). Dataset Shift in Machine Learning. MIT Press.
+Sagawa, S. et al. (2020). Distributionally Robust Neural Networks for Group Shifts. ICLR 2020.
+Shimodaira, H. (2000). Improving Predictive Inference under Covariate Shift. Journal of Statistical Planning and
+Inference, 90(2).
+Sinha, A. et al. (2018). Certifying Some Distributional Robustness with Principled Adversarial Training. ICLR 2018.
+Taleb, N. N. (2007). The Black Swan: The Impact of the Highly Improbable. Random House.
+Vaswani, A. et al. (2017). Attention Is All You Need. NeurIPS 2017.
+Wang, K. et al. (2023). Interpretability in the Wild: A Circuit for Indirect Object Identification in GPT-2. ICLR 2023.
+
+-- 18 of 18 --
+
