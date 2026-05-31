@@ -350,7 +350,7 @@ const GALLERY = [
   { src: "assets/reading-portrait.jpeg", caption: "Reading · The Book of Echoes", ratio: 0.75 },
   { src: "assets/football-team.jpg", caption: "Five-a-side, Friday nights", ratio: 1.78 },
   { src: "assets/beach-group.jpeg", caption: "Cohort sunset · Mauritius", ratio: 1.5 },
-  { src: "assets/climbing-harness.jpg", caption: "Climbing rig · ALU outdoor camp", ratio: 0.75 },
+  { src: "assets/climbing-harness.jpg", caption: "Climbing rig · outdoor camp", ratio: 0.75 },
   { src: "assets/paintball-team.jpg", caption: "Paintball · Kenya woods", ratio: 0.75 },
   { src: "assets/dinner-gala.jpeg", caption: "Gala night · Mauritius", ratio: 1.5 },
   { src: "assets/formal-friends.jpg", caption: "Mauritius nights", ratio: 0.75 },
