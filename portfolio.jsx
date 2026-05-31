@@ -5,10 +5,10 @@ const { useState, useEffect, useRef } = React;
    ========================================================= */
 
 const TAGLINES = [
-  "I solve problems institutions pay millions to solve.",
-  "I ship at Google. I ship at the UN. I ship at home.",
-  "Climate AI, humanitarian systems, healthcare ML.",
-  "Engineered inside Google. Engineered for the UN. Building next.",
+  "Software engineer and ML researcher, based in Nairobi.",
+  "Worked at Google and the UN before graduating.",
+  "Climate systems, healthcare ML, humanitarian tech.",
+  "Fresh graduate. Serious builder. First-generation all the way.",
 ];
 
 const NAV = [
@@ -23,15 +23,14 @@ const NAV = [
 ];
 
 const TICKER = [
-  { num: "5,600+", label: "Records shipped at Google", href: "#experience" },
+  { num: "5,600+", label: "Records processed at Google", href: "#experience" },
   { num: "50+", label: "CSOs mapped across 3 regions", href: "#experience" },
   { num: "500+", label: "Beneficiaries tracked at ALA", href: "#experience" },
   { num: "2", label: "UN-IOM research papers · read", href: "#research" },
   { num: "88%", label: "ML accuracy · IMDB-50K study", href: "https://github.com/JohnOngeri/Sentiment-Analysis" },
   { label: "Mastercard Foundation Scholar · ALU", href: "#about" },
   { label: "Selected · Mauritius Startup Lab 2025", href: "#leadership" },
-  { label: "Download CV / LinkedIn profile →", href: "assets/John_Ongeri_Profile.pdf" },
-  { label: "Open to roles & Masters programmes", href: "#contact" },
+    { label: "Open to roles & Masters programmes", href: "#contact" },
 ];
 
 const EXPLORING = [
@@ -75,32 +74,32 @@ const EXPERIENCE = [
     imageAlt: "John at UN-IOM Nairobi with colleagues, IOM Resilience mug in hand",
     groups: [
       {
-        head: "Information Architecture & Systems Management",
+        head: "Information & Knowledge Systems",
         bullets: [
-          "Architected a metadata-driven SharePoint file system, designing the directory taxonomy and access structures that optimised retrieval across 50+ thematic policy documents and talking points.",
-          "Standardised digital knowledge bases across 10+ country offices, structuring complex MECC (Migration, Environment & Climate Change) policy data into accessible, standardised regional factsheets.",
+          "Built and organised a SharePoint system for 50+ thematic policy documents and talking points, setting up the folder structure, taxonomy and access controls.",
+          "Standardised policy data across 10+ country offices, converting unstructured MECC (Migration, Environment & Climate Change) information into consistent regional factsheets.",
         ],
       },
       {
-        head: "Data Modeling & Structured Analysis",
+        head: "Data & Structured Analysis",
         bullets: [
-          "Engineered structured datasets from unstructured qualitative research, tracking and mapping 50+ Civil Society Organisations across 3 African regions to surface network patterns in climate mobility.",
-          "Designed a centralised tracking repository that turned hundreds of raw media and social links into a queryable database of quarterly digital-visibility metrics.",
-          "Synthesised regional activity data into structured info-sheets, tracking quantitative progress and milestones across 5+ youth-engagement initiatives.",
+          "Built a structured dataset from scratch to track 50+ civil society organisations across 3 African regions, mapping who was working on what in climate migration.",
+          "Built a tracking system for digital outreach, organising hundreds of raw social and media links into a searchable database of quarterly metrics.",
+          "Compiled activity reports for 5+ youth programmes, tracking outcomes and progress for each initiative.",
         ],
       },
       {
-        head: "Workflow Optimization & Digital Content Management",
+        head: "Workflow & Content Management",
         bullets: [
-          "Streamlined cross-regional data-collection pipelines, managing systematic retrieval and formatting of quarterly updates from decentralised country offices.",
-          "Managed the digital staging and CMS publication workflow for 20+ regional youth blog entries, ensuring structural integrity and consistent formatting.",
-          "Analysed digital-engagement metrics to inform content strategy and optimise outreach for international campaigns including World Environment Day.",
+          "Managed quarterly data collection from country offices across the region, standardising the format and retrieval process.",
+          "Handled the CMS publishing workflow for 20+ youth blog entries across the region.",
+          "Analysed engagement data to shape content strategy for campaigns including World Environment Day.",
         ],
       },
       {
         head: "Research",
         bullets: [
-          "Authored two formal research papers (see Research) on agentic safety and OOD robustness in climate-migration AI, published under the Climate Action Department.",
+          "Authored two research papers (see Research) on agentic safety and out-of-distribution robustness in climate-migration AI, published under the Climate Action Department.",
         ],
       },
     ],
@@ -113,7 +112,7 @@ const EXPERIENCE = [
       "Built 12+ AI-powered operational workflows using Python, Claude, Zapier and Make.com, automating reporting, document generation, stakeholder communication and data capture.",
       "Cut manual admin workload by ~25 hours/month by developing automated reporting pipelines and internal operational systems.",
       "Maintain 8+ operational trackers and dashboards covering partnership pipelines, programme KPIs, funding opportunities and M&E reporting.",
-      "Supported 20+ strategic documents including funding proposals, concept notes, research briefs and investor materials.",
+      "Helped produce 20+ documents including funding proposals, concept notes, research briefs and investor materials.",
     ],
   },
   {
@@ -121,10 +120,10 @@ const EXPERIENCE = [
     role: "Software Engineering Extern",
     org: "Google · via ALU Industry Partnership · Nairobi",
     bullets: [
-      "Engineered a production data-processing module ingesting 5,600+ structured records, hardened with 18 automated test cases. Zero post-deployment defects across the cohort review.",
-      "Code-reviewed three engineers' pull requests, intercepting 11 critical logic errors before deployment; set the QA bar within the cohort.",
+      "Built a production data-processing module that handled 5,600+ structured records, backed by 18 automated test cases. Zero defects after deployment.",
+      "Code-reviewed three engineers' pull requests and caught 11 logic errors before they went to production.",
       "Built modular Python pipelines to Google engineering standards: clean separation of concerns, defensive error handling, full test coverage.",
-      "Selected into one of ALU's most competitive industry placements; operated inside Google's mentorship framework alongside FAANG engineers.",
+      "Selected for ALU's Google externship, one of the programme's most competitive placements. Worked alongside experienced engineers within a real code review and deployment cycle.",
     ],
   },
   {
@@ -134,10 +133,10 @@ const EXPERIENCE = [
     image: "assets/ala-johannesburg.jpg",
     imageAlt: "John in a suit standing in front of the AL for Education sign at African Leadership Academy, Johannesburg",
     bullets: [
-      "Architected a 5-part Monitoring & Evaluation framework tracking impact across 500+ beneficiaries in Opportunities and Entrepreneurship programs, adopted organisation-wide.",
-      "Defined and validated 15 key programme indicators (cohort completion rates, jobs created), converting leadership instinct into measurable, scalable signal.",
-      "Compressed feedback loops by 20% via structured stakeholder reporting; the work seeded the strategic concept that became Menya Academy.",
-      "Presented findings to ALA leadership in Johannesburg; featured in Menya's official newsletter, reaching 1,000+ stakeholders across the African development ecosystem.",
+      "Built a 5-part Monitoring & Evaluation framework tracking impact across 500+ beneficiaries in Opportunities and Entrepreneurship programmes, adopted across the organisation.",
+      "Defined 15 programme indicators (cohort completion rates, jobs created) to give leadership consistent, trackable metrics.",
+      "Reduced reporting turnaround by 20% by building a structured reporting process. The work contributed to the concept behind Menya Academy.",
+      "Presented the findings to ALA leadership in Johannesburg; featured in Menya's newsletter, reaching 1,000+ stakeholders.",
     ],
   },
   {
@@ -145,9 +144,9 @@ const EXPERIENCE = [
     role: "College Counsellor",
     org: "Equity Group Foundation · Kenya",
     bullets: [
-      "Coached high-school graduates from Kenya, Uganda, Rwanda and DRC into fully-funded global scholarships. Direct pipeline into top universities worldwide.",
-      "Reviewed and rebuilt scholarship essays line-by-line, raising acceptance signal across a four-country applicant pool.",
-      "Built targeted SAT-prep strategies that compressed student test-prep timelines.",
+      "Coached high-school graduates from Kenya, Uganda, Rwanda and DRC into fully-funded global scholarships. Students went on to universities across the world.",
+      "Worked through scholarship essays line-by-line with students from four countries to improve their applications.",
+      "Designed targeted SAT prep plans that helped students prepare more efficiently.",
     ],
   },
   {
@@ -167,7 +166,7 @@ const WORK = [
     n: "01",
     title: "PregnaCare — Mobile health + ML API",
     human:
-      "A cross-platform mobile health app that gives African mothers and frontline healthcare workers an AI-powered birth-weight prediction tool, designed for low-resource clinical settings.",
+      "A cross-platform mobile app for maternal health, with a machine learning model that predicts birth weight. Built for healthcare workers in low-resource clinical settings.",
     stack: ["Flutter", "Dart", "Python", "ML API", "Swagger", "REST"],
     role: "Co-built with Andrew Ogayo",
     year: "2024",
@@ -175,7 +174,7 @@ const WORK = [
     image: "assets/pregnacare-pitch.jpeg",
     imageAlt: "John presenting PregnaCare on stage at ALU's Do Hard Things event",
     case:
-      "Flutter mobile tracker paired with a Python ML backend exposing a documented public REST endpoint. Brings together medical tools, tracking and emotional support in one safe place so mothers feel cared for, informed and never alone. Presented at ALU's Do Hard Things showcase.",
+      "A Flutter app backed by a Python ML API with a documented public REST endpoint. The goal was a practical tool for healthcare workers that didn't feel cold to use — tracking, predictions, and support in one place. Presented at ALU's Do Hard Things showcase.",
     links: [
       { label: "GitHub", href: "https://github.com/JohnOngeri/flutter-pregnancy-app" },
       { label: "Demo →", href: "#" },
@@ -200,7 +199,7 @@ const WORK = [
     n: "03",
     title: "Sentiment Analysis — NLP study",
     human:
-      "A rigorous empirical comparison of four NLP models on 50,000 movie reviews, finding that interpretable classical ML outperforms deep learning when efficiency matters.",
+      "A comparison of four NLP models on 50,000 IMDB reviews. Finding: in most real-world deployment scenarios, a well-tuned logistic regression still beats a neural network.",
     stack: ["Python", "BiLSTM", "TF-IDF", "Word2Vec", "TensorFlow", "scikit-learn"],
     role: "Capstone study",
     year: "2024",
@@ -208,7 +207,7 @@ const WORK = [
     image: "assets/flutter-coding.jpg",
     imageAlt: "Working in IDE on a Flutter / Python pipeline with full test suite",
     case:
-      "Designed and evaluated Logistic Regression (TF-IDF), Naïve Bayes, SVM and a Bidirectional LSTM (Word2Vec) on the IMDB 50K-review dataset under matched preprocessing. Finding: classical ML outperforms deep learning under interpretability and efficiency constraints, a trade-off analysis with direct implications for production ML in resource-limited settings.",
+      "Evaluated four models on the IMDB 50K dataset: Logistic Regression (TF-IDF), Naïve Bayes, SVM, and a BiLSTM (Word2Vec), all under the same preprocessing conditions. The logistic regression came out ahead on both accuracy and interpretability, which has real implications for deploying ML in resource-limited environments.",
     links: [
       { label: "GitHub", href: "https://github.com/JohnOngeri/Sentiment-Analysis" },
       { label: "Read report →", href: "#research" },
@@ -226,8 +225,8 @@ const PAPERS = [
     affil: "Climate Action Department, UN-IOM Regional Office, Nairobi",
     tags: ["AI Safety", "Agentic systems", "Humanitarian logistics", "Mechanistic interpretability", "Nairobi Protocol 2.0"],
     abstract: [
-      "Formalises the safety discontinuity between predictive models and autonomous agents in humanitarian logistics (including the off-switch problem, instrumental convergence, and reward hacking under proxy decoupling), using a simulated agentic failure in a multi-stage East African Community displacement event.",
-      "Proposes a three-component architecture: a Monitor-Agent recursive oversight framework, a formal action-redline logic for hard-stops that cannot be optimised around, and a mechanistic interpretability protocol for detecting deceptive alignment; closes with the Nairobi Protocol 2.0 for AU/UN compute governance.",
+      "Examines what changes when a humanitarian logistics system moves from predicting outcomes to taking autonomous actions. Uses a simulated multi-stage displacement event in the East African Community to show how problems like the off-switch problem, instrumental convergence, and proxy reward drift appear in practice.",
+      "Proposes a three-part response: a Monitor-Agent oversight setup, a set of hard-coded action limits the system cannot override, and an interpretability protocol for detecting deceptive behaviour. Closes with the Nairobi Protocol 2.0, a governance framework for AI compute in AU and UN contexts.",
     ],
     links: [
       { label: "Read PDF →", href: "assets/Recursive_Oversight_Action_Redlines.pdf" },
@@ -242,8 +241,8 @@ const PAPERS = [
     affil: "Climate Action Department, UN-IOM Regional Office, Nairobi",
     tags: ["OOD Generalisation", "Red-Teaming", "Climate-Migration AI", "Reward Misspecification", "Humanitarian Safety"],
     abstract: [
-      "Identifies distributional collapse (the joint failure of confidence miscalibration, latent space degeneration, and reward specification drift) as a structural risk for humanitarian ML systems encountering compound climate events in the EAC.",
-      "Proposes a three-part empirical audit methodology (automated red-teaming via IPCC AR6 tail-distribution scenarios, mechanistic interpretability of attention heads and MLP sublayers, and stratified calibration benchmarking), and demonstrates through a 2026 Horn-of-Africa case study that current deployed architectures produce systematically harmful allocations with no internal anomaly signal.",
+      "Looks at what happens to humanitarian ML systems when conditions shift far outside their training data. Identifies a failure mode called distributional collapse, where confidence scores become unreliable, model representations degrade, and reward signals drift — all at once — under compound climate events in the East African Community.",
+      "Proposes a three-part audit method: automated red-teaming using IPCC AR6 tail scenarios, attention and MLP-layer interpretability analysis, and calibration benchmarking. Tests this against a 2026 Horn-of-Africa case study, showing that current models can produce harmful allocation decisions with no internal warning signal.",
     ],
     links: [
       { label: "Read PDF →", href: "assets/Robustness_Under_Crisis.pdf" },
@@ -275,9 +274,9 @@ const LEADERSHIP = [
     image: "assets/srctreasurer.png",
     imageAlt: "ALU SRC 24/25 announcement card — John Ouma Ongeri, Treasurer, Kenya",
     bullets: [
-      "Won a full pan-African campaign across the ALU/ALC student body; elected sole signatory on every financial transaction across a year-long term.",
-      "Authored and enforced the SRC's budgetary and financial policies. Those controls survived a leadership transition with zero discrepancies.",
-      "Delivered termly financial statements with full audit transparency to a campus of hundreds.",
+      "Ran and won a campus-wide election across the ALU/ALC student body. Served as sole signatory on all financial transactions for the full year.",
+      "Wrote the SRC's budgetary and financial policies and held to them. The controls survived a leadership transition with zero discrepancies.",
+      "Delivered termly financial statements to a campus of hundreds with full audit transparency.",
     ],
   },
   {
@@ -288,7 +287,7 @@ const LEADERSHIP = [
     imageAlt: "ALU/ALC Integrity Board member card showing John Ouma — Kenya",
     bullets: [
       "Selected to ALU/ALC's student-run Integrity Board, the body charged with upholding academic honesty across the ALU and ALC student bodies.",
-      "Designed and shipped the board's fraud-reporting tool, demoed to the full board and integrated into the campus dashboard, turning a paper process into a confidential digital intake.",
+      "Built the board's fraud-reporting tool from scratch, demoed it to the full board, and got it integrated into the campus dashboard. Replaced a paper process with a confidential digital intake.",
     ],
   },
   {
@@ -296,8 +295,8 @@ const LEADERSHIP = [
     title: "Mauritius Startup Lab — SIE Cohort",
     org: "ALU Signature Immersive Experience · Mauritius",
     bullets: [
-      "Selected through one of ALU's most competitive cohort processes for the month-long Mauritius Startup Lab, a hands-on accelerator for entrepreneurs and aspiring leaders in tech and business.",
-      "Worked directly with founders, investors and operators; sharpened business instincts and translated a startup idea into an early operating plan.",
+      "Selected for the month-long Mauritius Startup Lab, ALU's annual immersive programme for entrepreneurs and early-stage founders.",
+      "Worked with founders, investors and operators over the month. Came out with a clearer sense of how to build a business, and an early operating plan for an idea I'd been sitting on.",
     ],
   },
   {
@@ -306,7 +305,7 @@ const LEADERSHIP = [
     org: "Independent Electoral & Boundaries Commission · Malindi",
     bullets: [
       "Operated the Kenya Integrated Election Management System (KIEMS) for real-time biometric voter verification at national-election scale.",
-      "Managed polling-station flow under strict regulatory compliance during one of Kenya's highest-stakes democratic events.",
+      "Managed the flow of a polling station during Kenya's 2022 general election.",
     ],
   },
   {
@@ -314,8 +313,8 @@ const LEADERSHIP = [
     title: "Dormitory Prefect & Library Prefect",
     org: "Kisii School · Two concurrent leadership posts",
     bullets: [
-      "Held responsibility for the conduct, welfare and night-time order of a full dormitory of fellow students, the school's most accountable peer-leadership role.",
-      "Simultaneously ran the school library: shelving, lending, and helping juniors find the books that opened the doors I now walk through.",
+      "Responsible for the welfare and night-time order of a full dormitory at Kisii School.",
+      "Also ran the school library: shelving, lending, and helping younger students find what they needed.",
     ],
   },
   {
@@ -339,11 +338,11 @@ const QUESTIONS = [
   },
   {
     q: "What does compute sovereignty look like for AI systems trained on African data?",
-    seed: "Local infrastructure, AU-anchored governance, and the Nairobi Protocol 2.0: building the rails before the agents arrive.",
+    seed: "Local infrastructure, AU-anchored governance, and the Nairobi Protocol 2.0. Who owns the compute matters as much as who writes the code.",
   },
   {
     q: "How do we measure the real-world impact of a research paper, not just its citations?",
-    seed: "Bridging the gap between academic publishing and the systems that actually ship to users.",
+    seed: "The gap between publishing and deployment is rarely discussed. It should be.",
   },
 ];
 
@@ -567,7 +566,27 @@ function Hero() {
   const ambientRef = useRef(null);
   const cursorDotRef = useRef(null);
   const cursorRingRef = useRef(null);
+  const heroVideoRef = useRef(null);
   const reduced = useReducedMotion();
+
+  // Auto-play video; pause when hero scrolls out of view
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    video.play().catch(() => {});
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    if (heroRef.current) io.observe(heroRef.current);
+    return () => io.disconnect();
+  }, []);
   const TARGET = "ONGERI";
   const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%";
 
@@ -681,15 +700,15 @@ function Hero() {
       <div className="cursor-dot" ref={cursorDotRef} aria-hidden="true" />
       <div className="cursor-ring" ref={cursorRingRef} aria-hidden="true" />
 
-      <div className="hero-meta-top hero-fade" style={{ "--delay": "100ms" }}>
+      <div className="hero-meta-top hero-fade delay-100">
         <div>Software Engineer<span>Ex-Google · UN-IOM · ML Researcher</span></div>
         <div>Based in<span>Nairobi, Kenya</span></div>
-        <div style={{ textAlign: "right" }}>Education<span>ALU · Mastercard Foundation Scholar</span></div>
+        <div>Education<span>ALU · Mastercard Foundation Scholar</span></div>
       </div>
 
       <div>
         <h1 className="hero-name">
-          <span className="first hero-clip" style={{ "--delay": "200ms" }}>
+          <span className="first hero-clip delay-200">
             <span className="first-inner">John Ouma</span>
           </span>
           <span className="last" ref={ongeriRef} aria-label="ONGERI">
@@ -699,7 +718,7 @@ function Hero() {
           </span>
         </h1>
         <p className="hero-tagline hero-tagline--kinetic">
-          {"I solve problems institutions pay millions to solve.".split(" ").map((w, i) => (
+          {"Software engineer. ML researcher. Based in Nairobi.".split(" ").map((w, i) => (
             <span
               key={i}
               className="hero-word"
@@ -710,11 +729,21 @@ function Hero() {
           ))}
         </p>
       <div className="hero-bio-row">
-        <p className="hero-bio hero-fade" style={{ "--delay": "900ms" }}>
-          Software engineer and ML researcher. By 23, I've engineered inside Google's mentorship framework through ALU's most competitive industry partnership, built technical tooling for the UN's global climate mandate at IOM in Nairobi, and architected data infrastructure tracking impact across 500+ beneficiaries at African Leadership Academy, while completing a Software Engineering degree on a full Mastercard Foundation Scholarship.
+        <p className="hero-bio hero-fade delay-900">
+          Software engineer and ML researcher, based in Nairobi. I graduated from African Leadership University on a full Mastercard Foundation Scholarship. Before finishing my degree, I built production tools at Google, wrote software for the UN's climate team at IOM, and designed a monitoring framework tracking 500+ beneficiaries at African Leadership Academy in Johannesburg.
         </p>
 
-        <div className="hero-photos hero-fade" style={{ "--delay": "1100ms" }} aria-hidden="true">
+        <div className="hero-photos hero-fade delay-1100" aria-hidden="true">
+          <figure className="hero-photo hero-photo--vid">
+            <video
+              ref={heroVideoRef}
+              src="assets/won 1st place video.mp4"
+              playsInline
+              loop
+              preload="auto"
+            />
+            <figcaption>1st Place · ALU 2024</figcaption>
+          </figure>
           <figure className="hero-photo hero-photo--front">
             <img src="assets/hero-google-1.jpg" alt="John at the Google Africa office reception, holding a Pixelbook" loading="lazy" />
             <figcaption>Google Africa · 2025</figcaption>
@@ -727,7 +756,7 @@ function Hero() {
       </div>
       </div>
 
-      <div className="hero-bottom hero-fade" style={{ "--delay": "1050ms" }}>
+      <div className="hero-bottom hero-fade delay-1050">
         <span className="status-badge">
           <span className="pulse" />
           Open to roles &amp; Masters programmes
@@ -784,10 +813,10 @@ function About() {
       <div className="about-grid">
         <div className="reveal">
           <span className="eyebrow">01 · About</span>
-          <p className="pullquote" style={{ marginTop: 32 }}>
-            I solve problems institutions pay <span className="accent">millions</span> to solve.
+          <p className="pullquote pullquote-top">
+            Good software should work in the hardest <span className="accent">environments,</span> not just the easiest ones.
           </p>
-          <p className="pullquote-attrib">A working summary</p>
+          <p className="pullquote-attrib">A working principle</p>
 
           <div className="about-portrait">
             <img src="assets/portrait-smile.jpg" alt="John Ouma Ongeri, golden-hour portrait in Kigali" loading="lazy" />
@@ -796,22 +825,22 @@ function About() {
         </div>
 
         <div>
-          <div className="about-block reveal" style={{ "--rd": "60ms" }}>
+          <div className="about-block reveal rd-60">
             <h3>The short version</h3>
             <div className="about-bio">
               <p>
-                I'm John Ouma Ongeri, a software engineer and researcher operating at the intersection of technology, climate and humanitarian systems. I currently work as a Climate Action software engineer at UN-IOM in Nairobi, and as Founder's Associate at Asakheni SA in South Africa, where I build AI-powered operational systems.
+                I'm John Ouma Ongeri, software engineer and ML researcher. I currently work at UN-IOM Nairobi on climate systems, and as Founder's Associate at Asakheni SA, where I build automation and AI tools for the team's operations.
               </p>
               <p>
-                Before that, I was a Software Engineering Extern at Google through ALU's most competitive industry partnership, shipping a production data-processing module hardened with 18 automated tests, zero post-deployment defects. I architected a 5-part M&amp;E framework tracking 500+ beneficiaries at African Leadership Academy in Johannesburg, and presented the work to ALA leadership in South Africa.
+                Before graduating, I spent a semester as a Software Engineering Extern at Google through ALU's industry partnership, writing a production data module backed by 18 automated tests, with zero defects after deployment. I also built a monitoring and evaluation framework at African Leadership Academy in Johannesburg, tracking outcomes across 500+ programme beneficiaries, and presented the work to ALA leadership.
               </p>
               <p>
-                At ALU I was elected SRC Financial Treasurer, sole signatory on every financial transaction across the entire student body for a full year. I was concurrently appointed to the campus Integrity Board, and was selected for the Mauritius Startup Lab Signature Immersive Experience. First-generation university student. Wings to Fly Scholar. Equity Leaders Program Scholar. Mastercard Foundation Scholar. Every credential earned, none inherited.
+                At ALU I was elected SRC Financial Treasurer, sole signatory on every financial transaction across the student body for a full year. I also served on the Integrity Board and was selected for the Mauritius Startup Lab. First-generation university student. Wings to Fly Scholar. Equity Leaders Program Scholar. Mastercard Foundation Scholar. 
               </p>
             </div>
           </div>
 
-          <div className="about-block reveal" style={{ "--rd": "100ms" }}>
+          <div className="about-block reveal rd-100">
             <h3>Distinctions &amp; selections</h3>
             <div className="dist-grid">
               {DISTINCTIONS.map((d) => (
@@ -823,7 +852,7 @@ function About() {
             </div>
           </div>
 
-          <div className="about-block reveal" style={{ "--rd": "160ms" }}>
+          <div className="about-block reveal rd-160">
             <h3>What I'm exploring right now</h3>
             <ul className="exploring-list">
               {EXPLORING.map((e, i) => (
@@ -835,7 +864,7 @@ function About() {
             </ul>
           </div>
 
-          <div className="about-block reveal" style={{ "--rd": "220ms" }}>
+          <div className="about-block reveal rd-220">
             <h3>Toolbox</h3>
             {SKILLS.map((g) => (
               <div className="skill-group" key={g.group}>
@@ -860,7 +889,7 @@ function Experience() {
       <div className="section-head reveal">
         <h2>Experience.</h2>
         <p className="desc">
-          The institutions I've shipped at. Google, UN-IOM, African Leadership Academy, Equity Bank, the IEBC. Concrete numbers attached to each.
+          Where I've worked. Google, UN-IOM, African Leadership Academy, Equity Bank, the IEBC. Numbers attached.
         </p>
       </div>
 
@@ -906,7 +935,7 @@ function Work() {
       <div className="section-head reveal">
         <h2>Selected work.</h2>
         <p className="desc">
-          Three projects I built end-to-end. Human-first description above, technical detail below; read either layer, both work.
+          Three projects I built from scratch. Plain description above, technical detail below.
         </p>
       </div>
 
@@ -959,7 +988,7 @@ function Research() {
       <div className="section-head reveal">
         <h2>Research <span className="swatch">&amp; writing.</span></h2>
         <p className="desc">
-          Two published research papers at UN-IOM on agentic safety and OOD robustness in humanitarian AI, plus an earlier capstone NLP study. Rigorous work that crosses the line between engineering and inquiry.
+          Two published papers at UN-IOM on agentic safety and out-of-distribution robustness in humanitarian AI, plus an earlier NLP study. Work that sits between engineering and research.
         </p>
       </div>
 
@@ -996,7 +1025,7 @@ function Leadership() {
       <div className="section-head reveal">
         <h2>Leadership <span className="swatch">&amp; community.</span></h2>
         <p className="desc">
-          A through-line that starts in primary school, runs through national-election service in Kenya, and lands at a pan-African student government.
+          Leadership started early — school prefect, then student government, then the UN. A consistent thread across the years.
         </p>
       </div>
 
@@ -1033,7 +1062,7 @@ function Thinking() {
       <div className="section-head reveal">
         <h2>Questions I'm chasing.</h2>
         <p className="desc">
-          A working list of the problems that pull me back to the desk. Not answers. The right questions are harder to find.
+          Things I keep thinking about. Not answers — the questions came first.
         </p>
       </div>
 
@@ -1058,7 +1087,7 @@ function Life() {
       <div className="section-head reveal">
         <h2>Off the screen.</h2>
         <p className="desc">
-          A portfolio of code that doesn't include the people you build it for is half a portrait. Some of the rest of mine.
+          There's more to it than the code. Some of the rest.
         </p>
       </div>
 
@@ -1093,7 +1122,7 @@ function Contact() {
       </div>
 
       <div className="contact-grid">
-        <div className="reveal" style={{ "--rd": "80ms" }}>
+        <div className="reveal rd-80">
           <a className="contact-email" href="mailto:johnongeriouma@gmail.com">
             johnongeriouma@gmail.com
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -1102,24 +1131,24 @@ function Contact() {
           </a>
 
           <div className="cv-row">
-            <a className="cv-btn" href="assets/John_Ongeri_Profile.pdf" target="_blank" rel="noreferrer">
+            <a className="cv-btn" href="assets/John_Ongeri_Profile.pdf" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14" />
               </svg>
-              View CV / LinkedIn profile (PDF)
+              LinkedIn profile PDF
             </a>
             <p className="academic-note">
-              Considering Masters programmes in CS / HCI / ML / AI safety for the 2026–2027 intake. Happy to share transcripts and recommendations on request.
+               Happy to share transcripts and recommendations on request.
             </p>
           </div>
         </div>
 
-        <div className="contact-links reveal" style={{ "--rd": "160ms" }}>
-          <a href="https://github.com/JohnOngeri" target="_blank" rel="noreferrer">
+        <div className="contact-links reveal rd-160">
+          <a href="https://github.com/JohnOngeri" target="_blank" rel="noopener noreferrer">
             <span>GitHub — @JohnOngeri</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M7 17 17 7M9 7h8v8" /></svg>
           </a>
-          <a href="https://linkedin.com/in/john-ongeri-b01759226" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com/in/john-ongeri-b01759226" target="_blank" rel="noopener noreferrer">
             <span>LinkedIn — john-ongeri</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M7 17 17 7M9 7h8v8" /></svg>
           </a>
@@ -1134,8 +1163,8 @@ function Contact() {
         </div>
       </div>
 
-      <div className="foot" style={{ marginTop: 100 }}>
-        <span>© 2026 John Ouma Ongeri · Built from scratch, no templates</span>
+      <div className="foot foot-spaced">
+        <span>© 2026 John Ouma Ongeri · </span>
         <span>Last updated · May 2026</span>
       </div>
     </section>
@@ -1225,7 +1254,7 @@ function App() {
               <div className="pdf-modal__actions">
                 <a href={pdf.href} download className="pdf-modal__btn">Download</a>
                 <a href={pdf.blobUrl || pdf.href} target="_blank" rel="noreferrer" className="pdf-modal__btn">Open in tab</a>
-                <button className="pdf-modal__btn pdf-modal__btn--close" onClick={() => setPdf(null)} aria-label="Close">Close ✕</button>
+                <button type="button" className="pdf-modal__btn pdf-modal__btn--close" onClick={() => setPdf(null)} aria-label="Close">Close ✕</button>
               </div>
             </header>
             <div className="pdf-modal__body">
