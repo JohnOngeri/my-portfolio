@@ -77,14 +77,14 @@ const EXPERIENCE = [
       {
         head: "Information Architecture & Systems Management",
         bullets: [
-          "Architected a metadata-driven SharePoint file system — designing the directory taxonomy and access structures that optimised retrieval across 50+ thematic policy documents and talking points.",
+          "Architected a metadata-driven SharePoint file system, designing the directory taxonomy and access structures that optimised retrieval across 50+ thematic policy documents and talking points.",
           "Standardised digital knowledge bases across 10+ country offices, structuring complex MECC (Migration, Environment & Climate Change) policy data into accessible, standardised regional factsheets.",
         ],
       },
       {
         head: "Data Modeling & Structured Analysis",
         bullets: [
-          "Engineered structured datasets from unstructured qualitative research — tracking and mapping 50+ Civil Society Organisations across 3 African regions to surface network patterns in climate mobility.",
+          "Engineered structured datasets from unstructured qualitative research, tracking and mapping 50+ Civil Society Organisations across 3 African regions to surface network patterns in climate mobility.",
           "Designed a centralised tracking repository that turned hundreds of raw media and social links into a queryable database of quarterly digital-visibility metrics.",
           "Synthesised regional activity data into structured info-sheets, tracking quantitative progress and milestones across 5+ youth-engagement initiatives.",
         ],
@@ -100,7 +100,7 @@ const EXPERIENCE = [
       {
         head: "Research",
         bullets: [
-          "Authored two formal research papers (see Research) on agentic safety and OOD robustness in climate-migration AI — published under the Climate Action Department.",
+          "Authored two formal research papers (see Research) on agentic safety and OOD robustness in climate-migration AI, published under the Climate Action Department.",
         ],
       },
     ],
@@ -110,7 +110,7 @@ const EXPERIENCE = [
     role: "Founder's Associate · Research Ops & AI Systems",
     org: "Asakheni SA · South Africa",
     bullets: [
-      "Built 12+ AI-powered operational workflows using Python, Claude, Zapier and Make.com — automating reporting, document generation, stakeholder communication and data capture.",
+      "Built 12+ AI-powered operational workflows using Python, Claude, Zapier and Make.com, automating reporting, document generation, stakeholder communication and data capture.",
       "Cut manual admin workload by ~25 hours/month by developing automated reporting pipelines and internal operational systems.",
       "Maintain 8+ operational trackers and dashboards covering partnership pipelines, programme KPIs, funding opportunities and M&E reporting.",
       "Supported 20+ strategic documents including funding proposals, concept notes, research briefs and investor materials.",
@@ -121,8 +121,8 @@ const EXPERIENCE = [
     role: "Software Engineering Extern",
     org: "Google · via ALU Industry Partnership · Nairobi",
     bullets: [
-      "Engineered a production data-processing module ingesting 5,600+ structured records, hardened with 18 automated test cases — zero post-deployment defects across the cohort review.",
-      "Code-reviewed three engineers' pull requests, intercepting 11 critical logic errors before deployment — set the QA bar within the cohort.",
+      "Engineered a production data-processing module ingesting 5,600+ structured records, hardened with 18 automated test cases. Zero post-deployment defects across the cohort review.",
+      "Code-reviewed three engineers' pull requests, intercepting 11 critical logic errors before deployment; set the QA bar within the cohort.",
       "Built modular Python pipelines to Google engineering standards: clean separation of concerns, defensive error handling, full test coverage.",
       "Selected into one of ALU's most competitive industry placements; operated inside Google's mentorship framework alongside FAANG engineers.",
     ],
@@ -134,8 +134,8 @@ const EXPERIENCE = [
     image: "assets/ala-johannesburg.jpg",
     imageAlt: "John in a suit standing in front of the AL for Education sign at African Leadership Academy, Johannesburg",
     bullets: [
-      "Architected a 5-part Monitoring & Evaluation framework tracking impact across 500+ beneficiaries in Opportunities and Entrepreneurship programs — adopted organisation-wide.",
-      "Defined and validated 15 key programme indicators (cohort completion rates, jobs created) — converted leadership instinct into measurable, scalable signal.",
+      "Architected a 5-part Monitoring & Evaluation framework tracking impact across 500+ beneficiaries in Opportunities and Entrepreneurship programs, adopted organisation-wide.",
+      "Defined and validated 15 key programme indicators (cohort completion rates, jobs created), converting leadership instinct into measurable, scalable signal.",
       "Compressed feedback loops by 20% via structured stakeholder reporting; the work seeded the strategic concept that became Menya Academy.",
       "Presented findings to ALA leadership in Johannesburg; featured in Menya's official newsletter, reaching 1,000+ stakeholders across the African development ecosystem.",
     ],
@@ -145,7 +145,7 @@ const EXPERIENCE = [
     role: "College Counsellor",
     org: "Equity Group Foundation · Kenya",
     bullets: [
-      "Coached high-school graduates from Kenya, Uganda, Rwanda and DRC into fully-funded global scholarships — direct pipeline into top universities worldwide.",
+      "Coached high-school graduates from Kenya, Uganda, Rwanda and DRC into fully-funded global scholarships. Direct pipeline into top universities worldwide.",
       "Reviewed and rebuilt scholarship essays line-by-line, raising acceptance signal across a four-country applicant pool.",
       "Built targeted SAT-prep strategies that compressed student test-prep timelines.",
     ],
@@ -155,7 +155,7 @@ const EXPERIENCE = [
     role: "Pre-University Intern · Equity Leaders Program Scholar",
     org: "Equity Bank Limited · Malindi, Kenya",
     bullets: [
-      "Processed cash transactions for 100+ customers daily through Equity's core banking system — zero reconciliation errors.",
+      "Processed cash transactions for 100+ customers daily through Equity's core banking system. Zero reconciliation errors.",
       "Originated customer bank accounts end-to-end through Equity's KYC and onboarding systems.",
       "Early hands-on exposure to the fintech operations stack powering East Africa's largest bank by customer count.",
     ],
@@ -167,7 +167,7 @@ const WORK = [
     n: "01",
     title: "PregnaCare — Mobile health + ML API",
     human:
-      "A cross-platform mobile health app that gives African mothers and frontline healthcare workers an AI-powered birth-weight prediction tool — designed for low-resource clinical settings.",
+      "A cross-platform mobile health app that gives African mothers and frontline healthcare workers an AI-powered birth-weight prediction tool, designed for low-resource clinical settings.",
     stack: ["Flutter", "Dart", "Python", "ML API", "Swagger", "REST"],
     role: "Co-built with Andrew Ogayo",
     year: "2024",
@@ -175,7 +175,7 @@ const WORK = [
     image: "assets/pregnacare-pitch.jpeg",
     imageAlt: "John presenting PregnaCare on stage at ALU's Do Hard Things event",
     case:
-      "Flutter mobile tracker paired with a Python ML backend exposing a documented public REST endpoint. Brings together medical tools, tracking and emotional support in one safe place — so mothers feel cared for, informed and never alone. Presented at ALU's Do Hard Things showcase.",
+      "Flutter mobile tracker paired with a Python ML backend exposing a documented public REST endpoint. Brings together medical tools, tracking and emotional support in one safe place so mothers feel cared for, informed and never alone. Presented at ALU's Do Hard Things showcase.",
     links: [
       { label: "GitHub", href: "https://github.com/JohnOngeri/flutter-pregnancy-app" },
       { label: "Demo →", href: "#" },
@@ -185,7 +185,7 @@ const WORK = [
     n: "02",
     title: "Integrity Board — Fraud reporting tool",
     human:
-      "A confidential incident-reporting interface for ALU's student-run Integrity Board — so any member of the community can flag academic dishonesty without friction or fear.",
+      "A confidential incident-reporting interface for ALU's student-run Integrity Board, so any member of the community can flag academic dishonesty without friction or fear.",
     stack: ["React", "Forms", "Auth", "UX research"],
     role: "Built as Integrity Board member",
     year: "2024 — 2025",
@@ -200,7 +200,7 @@ const WORK = [
     n: "03",
     title: "Sentiment Analysis — NLP study",
     human:
-      "A rigorous empirical comparison of four NLP models on 50,000 movie reviews — finding that interpretable classical ML outperforms deep learning when efficiency matters.",
+      "A rigorous empirical comparison of four NLP models on 50,000 movie reviews, finding that interpretable classical ML outperforms deep learning when efficiency matters.",
     stack: ["Python", "BiLSTM", "TF-IDF", "Word2Vec", "TensorFlow", "scikit-learn"],
     role: "Capstone study",
     year: "2024",
@@ -208,7 +208,7 @@ const WORK = [
     image: "assets/flutter-coding.jpg",
     imageAlt: "Working in IDE on a Flutter / Python pipeline with full test suite",
     case:
-      "Designed and evaluated Logistic Regression (TF-IDF), Naïve Bayes, SVM and a Bidirectional LSTM (Word2Vec) on the IMDB 50K-review dataset under matched preprocessing. Finding: classical ML outperforms deep learning under interpretability and efficiency constraints — a trade-off analysis with direct implications for production ML in resource-limited settings.",
+      "Designed and evaluated Logistic Regression (TF-IDF), Naïve Bayes, SVM and a Bidirectional LSTM (Word2Vec) on the IMDB 50K-review dataset under matched preprocessing. Finding: classical ML outperforms deep learning under interpretability and efficiency constraints, a trade-off analysis with direct implications for production ML in resource-limited settings.",
     links: [
       { label: "GitHub", href: "https://github.com/JohnOngeri/Sentiment-Analysis" },
       { label: "Read report →", href: "#research" },
@@ -226,8 +226,8 @@ const PAPERS = [
     affil: "Climate Action Department, UN-IOM Regional Office, Nairobi",
     tags: ["AI Safety", "Agentic systems", "Humanitarian logistics", "Mechanistic interpretability", "Nairobi Protocol 2.0"],
     abstract: [
-      "Formalises the safety discontinuity between predictive models and autonomous agents in humanitarian logistics — including the off-switch problem, instrumental convergence, and reward hacking under proxy decoupling — using a simulated agentic failure in a multi-stage East African Community displacement event.",
-      "Proposes a three-component architecture: a Monitor-Agent recursive oversight framework, a formal action-redline logic for hard-stops that cannot be optimised around, and a mechanistic interpretability protocol for detecting deceptive alignment — closing with the Nairobi Protocol 2.0 for AU/UN compute governance.",
+      "Formalises the safety discontinuity between predictive models and autonomous agents in humanitarian logistics (including the off-switch problem, instrumental convergence, and reward hacking under proxy decoupling), using a simulated agentic failure in a multi-stage East African Community displacement event.",
+      "Proposes a three-component architecture: a Monitor-Agent recursive oversight framework, a formal action-redline logic for hard-stops that cannot be optimised around, and a mechanistic interpretability protocol for detecting deceptive alignment; closes with the Nairobi Protocol 2.0 for AU/UN compute governance.",
     ],
     links: [
       { label: "Read PDF →", href: "assets/Recursive_Oversight_Action_Redlines.pdf" },
@@ -242,8 +242,8 @@ const PAPERS = [
     affil: "Climate Action Department, UN-IOM Regional Office, Nairobi",
     tags: ["OOD Generalisation", "Red-Teaming", "Climate-Migration AI", "Reward Misspecification", "Humanitarian Safety"],
     abstract: [
-      "Identifies distributional collapse — the joint failure of confidence miscalibration, latent space degeneration, and reward specification drift — as a structural risk for humanitarian ML systems encountering compound climate events in the EAC.",
-      "Proposes a three-part empirical audit methodology — automated red-teaming via IPCC AR6 tail-distribution scenarios, mechanistic interpretability of attention heads and MLP sublayers, and stratified calibration benchmarking — and demonstrates through a 2026 Horn-of-Africa case study that current deployed architectures produce systematically harmful allocations with no internal anomaly signal.",
+      "Identifies distributional collapse (the joint failure of confidence miscalibration, latent space degeneration, and reward specification drift) as a structural risk for humanitarian ML systems encountering compound climate events in the EAC.",
+      "Proposes a three-part empirical audit methodology (automated red-teaming via IPCC AR6 tail-distribution scenarios, mechanistic interpretability of attention heads and MLP sublayers, and stratified calibration benchmarking), and demonstrates through a 2026 Horn-of-Africa case study that current deployed architectures produce systematically harmful allocations with no internal anomaly signal.",
     ],
     links: [
       { label: "Read PDF →", href: "assets/Robustness_Under_Crisis.pdf" },
@@ -258,7 +258,7 @@ const PAPERS = [
     tags: ["NLP", "Sentiment Analysis", "BiLSTM", "TF-IDF", "Logistic Regression"],
     abstract: [
       "Evaluates Logistic Regression, Naïve Bayes, SVM and a Bidirectional LSTM on the IMDB 50K-review dataset under matched preprocessing.",
-      "Finds that TF-IDF + Logistic Regression (88% F1) marginally outperforms a Word2Vec-trained BiLSTM (86% F1), arguing that model selection should be governed by deployment constraints — not raw accuracy.",
+      "Finds that TF-IDF + Logistic Regression (88% F1) marginally outperforms a Word2Vec-trained BiLSTM (86% F1), arguing that model selection should be governed by deployment constraints, not raw accuracy.",
     ],
     links: [
       { label: "Read PDF", href: "#" },
@@ -275,8 +275,8 @@ const LEADERSHIP = [
     image: "assets/srctreasurer.png",
     imageAlt: "ALU SRC 24/25 announcement card — John Ouma Ongeri, Treasurer, Kenya",
     bullets: [
-      "Won a full pan-African campaign across the ALU/ALC student body — elected sole signatory on every financial transaction across a year-long term.",
-      "Authored and enforced the SRC's budgetary and financial policies — controls that survived a leadership transition with zero discrepancies.",
+      "Won a full pan-African campaign across the ALU/ALC student body; elected sole signatory on every financial transaction across a year-long term.",
+      "Authored and enforced the SRC's budgetary and financial policies. Those controls survived a leadership transition with zero discrepancies.",
       "Delivered termly financial statements with full audit transparency to a campus of hundreds.",
     ],
   },
@@ -288,7 +288,7 @@ const LEADERSHIP = [
     imageAlt: "ALU/ALC Integrity Board member card showing John Ouma — Kenya",
     bullets: [
       "Selected to ALU/ALC's student-run Integrity Board, the body charged with upholding academic honesty across the ALU and ALC student bodies.",
-      "Designed and shipped the board's fraud-reporting tool, demoed to the full board and integrated into the campus dashboard — turning a paper process into a confidential digital intake.",
+      "Designed and shipped the board's fraud-reporting tool, demoed to the full board and integrated into the campus dashboard, turning a paper process into a confidential digital intake.",
     ],
   },
   {
@@ -296,7 +296,7 @@ const LEADERSHIP = [
     title: "Mauritius Startup Lab — SIE Cohort",
     org: "ALU Signature Immersive Experience · Mauritius",
     bullets: [
-      "Selected through one of ALU's most competitive cohort processes for the month-long Mauritius Startup Lab — a hands-on accelerator for entrepreneurs and aspiring leaders in tech and business.",
+      "Selected through one of ALU's most competitive cohort processes for the month-long Mauritius Startup Lab, a hands-on accelerator for entrepreneurs and aspiring leaders in tech and business.",
       "Worked directly with founders, investors and operators; sharpened business instincts and translated a startup idea into an early operating plan.",
     ],
   },
@@ -305,7 +305,7 @@ const LEADERSHIP = [
     title: "Polling Clerk — National Election",
     org: "Independent Electoral & Boundaries Commission · Malindi",
     bullets: [
-      "Operated the Kenya Integrated Election Management System (KIEMS) — real-time biometric voter verification at national-election scale.",
+      "Operated the Kenya Integrated Election Management System (KIEMS) for real-time biometric voter verification at national-election scale.",
       "Managed polling-station flow under strict regulatory compliance during one of Kenya's highest-stakes democratic events.",
     ],
   },
@@ -314,7 +314,7 @@ const LEADERSHIP = [
     title: "Dormitory Prefect & Library Prefect",
     org: "Kisii School · Two concurrent leadership posts",
     bullets: [
-      "Held responsibility for the conduct, welfare and night-time order of a full dormitory of fellow students — the school's most accountable peer-leadership role.",
+      "Held responsibility for the conduct, welfare and night-time order of a full dormitory of fellow students, the school's most accountable peer-leadership role.",
       "Simultaneously ran the school library: shelving, lending, and helping juniors find the books that opened the doors I now walk through.",
     ],
   },
@@ -323,7 +323,7 @@ const LEADERSHIP = [
     title: "Class Prefect",
     org: "Earliest leadership role",
     bullets: [
-      "Picked by classmates and teachers to keep our class organised, on time and on-task — the first time I learned that leadership is mostly about showing up early and reading the room.",
+      "Picked by classmates and teachers to keep our class organised, on time and on-task. That was the first time I learned that leadership is mostly about showing up early and reading the room.",
     ],
   },
 ];
@@ -334,12 +334,12 @@ const QUESTIONS = [
     seed: "Monitor-Agent oversight, action-redlines that cannot be optimised around, and the institutional governance that enforces them.",
   },
   {
-    q: "When does a classical ML model outperform a neural network — and how do we know in advance?",
-    seed: "Pre-experiment heuristics for interpretability, data scale and deployment cost — moving the choice earlier in the pipeline.",
+    q: "When does a classical ML model outperform a neural network, and how do we know in advance?",
+    seed: "Pre-experiment heuristics for interpretability, data scale and deployment cost, to move the choice earlier in the pipeline.",
   },
   {
     q: "What does compute sovereignty look like for AI systems trained on African data?",
-    seed: "Local infrastructure, AU-anchored governance, and the Nairobi Protocol 2.0 — building the rails before the agents arrive.",
+    seed: "Local infrastructure, AU-anchored governance, and the Nairobi Protocol 2.0: building the rails before the agents arrive.",
   },
   {
     q: "How do we measure the real-world impact of a research paper, not just its citations?",
@@ -711,7 +711,7 @@ function Hero() {
         </p>
       <div className="hero-bio-row">
         <p className="hero-bio hero-fade" style={{ "--delay": "900ms" }}>
-          Software engineer and ML researcher. By 23, I've engineered inside Google's mentorship framework through ALU's most competitive industry partnership, built technical tooling for the UN's global climate mandate at IOM in Nairobi, and architected data infrastructure tracking impact across 500+ beneficiaries at African Leadership Academy — while completing a Software Engineering degree on a full Mastercard Foundation Scholarship.
+          Software engineer and ML researcher. By 23, I've engineered inside Google's mentorship framework through ALU's most competitive industry partnership, built technical tooling for the UN's global climate mandate at IOM in Nairobi, and architected data infrastructure tracking impact across 500+ beneficiaries at African Leadership Academy, while completing a Software Engineering degree on a full Mastercard Foundation Scholarship.
         </p>
 
         <div className="hero-photos hero-fade" style={{ "--delay": "1100ms" }} aria-hidden="true">
@@ -800,13 +800,13 @@ function About() {
             <h3>The short version</h3>
             <div className="about-bio">
               <p>
-                I'm John Ouma Ongeri — a software engineer and researcher operating at the intersection of technology, climate and humanitarian systems. I currently work as a Climate Action software engineer at UN-IOM in Nairobi, and as Founder's Associate at Asakheni SA in South Africa, where I build AI-powered operational systems.
+                I'm John Ouma Ongeri, a software engineer and researcher operating at the intersection of technology, climate and humanitarian systems. I currently work as a Climate Action software engineer at UN-IOM in Nairobi, and as Founder's Associate at Asakheni SA in South Africa, where I build AI-powered operational systems.
               </p>
               <p>
-                Before that, I was a Software Engineering Extern at Google through ALU's most competitive industry partnership — shipping a production data-processing module hardened with 18 automated tests, zero post-deployment defects. I architected a 5-part M&amp;E framework tracking 500+ beneficiaries at African Leadership Academy in Johannesburg, and presented the work to ALA leadership in South Africa.
+                Before that, I was a Software Engineering Extern at Google through ALU's most competitive industry partnership, shipping a production data-processing module hardened with 18 automated tests, zero post-deployment defects. I architected a 5-part M&amp;E framework tracking 500+ beneficiaries at African Leadership Academy in Johannesburg, and presented the work to ALA leadership in South Africa.
               </p>
               <p>
-                At ALU I was elected SRC Financial Treasurer — sole signatory on every financial transaction across the entire student body for a full year. I was concurrently appointed to the campus Integrity Board, and was selected for the Mauritius Startup Lab Signature Immersive Experience. First-generation university student. Wings to Fly Scholar. Equity Leaders Program Scholar. Mastercard Foundation Scholar. Every credential earned, none inherited.
+                At ALU I was elected SRC Financial Treasurer, sole signatory on every financial transaction across the entire student body for a full year. I was concurrently appointed to the campus Integrity Board, and was selected for the Mauritius Startup Lab Signature Immersive Experience. First-generation university student. Wings to Fly Scholar. Equity Leaders Program Scholar. Mastercard Foundation Scholar. Every credential earned, none inherited.
               </p>
             </div>
           </div>
@@ -860,7 +860,7 @@ function Experience() {
       <div className="section-head reveal">
         <h2>Experience.</h2>
         <p className="desc">
-          The institutions I've shipped at. Google, UN-IOM, African Leadership Academy, Equity Bank, the IEBC — concrete numbers attached to each.
+          The institutions I've shipped at. Google, UN-IOM, African Leadership Academy, Equity Bank, the IEBC. Concrete numbers attached to each.
         </p>
       </div>
 
@@ -906,7 +906,7 @@ function Work() {
       <div className="section-head reveal">
         <h2>Selected work.</h2>
         <p className="desc">
-          Three projects I built end-to-end. Human-first description above, technical detail below — read either layer, both work.
+          Three projects I built end-to-end. Human-first description above, technical detail below; read either layer, both work.
         </p>
       </div>
 
@@ -959,7 +959,7 @@ function Research() {
       <div className="section-head reveal">
         <h2>Research <span className="swatch">&amp; writing.</span></h2>
         <p className="desc">
-          Two published research papers at UN-IOM on agentic safety and OOD robustness in humanitarian AI — plus an earlier capstone NLP study. Rigorous work that crosses the line between engineering and inquiry.
+          Two published research papers at UN-IOM on agentic safety and OOD robustness in humanitarian AI, plus an earlier capstone NLP study. Rigorous work that crosses the line between engineering and inquiry.
         </p>
       </div>
 
@@ -1033,7 +1033,7 @@ function Thinking() {
       <div className="section-head reveal">
         <h2>Questions I'm chasing.</h2>
         <p className="desc">
-          A working list of the problems that pull me back to the desk. Not answers — the right questions are harder to find.
+          A working list of the problems that pull me back to the desk. Not answers. The right questions are harder to find.
         </p>
       </div>
 
@@ -1088,7 +1088,7 @@ function Contact() {
           Let's build something <em>worth building.</em>
         </h2>
         <p className="sub">
-          Or talk research. Or Masters programmes. I'm open — and I read every cold email.
+          Or talk research. Or Masters programmes. I'm open, and I read every cold email.
         </p>
       </div>
 
